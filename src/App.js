@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./App.module.css";
 import Header from "./components/header/header";
 import Sidebar from "./components/sidebar/sidebar";
-
+import Form from "./components/form/form";
 function App() {
 	const [category, setCategory] = React.useState(null);
 	const [topic, setTopic] = React.useState(null);
@@ -12,14 +12,14 @@ function App() {
 		<>
 			<Header></Header>
 			<div className={styles["main"]}>
-				<Sidebar
+				<Form
 					category={category}
 					setCategory={setCategory}
 					topic={topic}
 					setTopic={setTopic}
 					location={location}
 					setLocation={setLocation}
-				></Sidebar>
+				></Form>
 				{/* <MainContent>
 
 			</MainContent> */}

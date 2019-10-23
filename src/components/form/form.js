@@ -11,7 +11,7 @@ const Form = ({
 	setLocation
 }) => {
 	return (
-		<form>
+		<form className={styles["form"]}>
 			<Select
 				category={category}
 				setCategory={setCategory}
