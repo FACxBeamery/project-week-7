@@ -2,10 +2,12 @@
 	background-color: #fafcff;
 	display: flex;
 	justify-content: space-between;
-	height: 5vw;
+	height: 10vh;
 	vertical-align: middle;
 	align-items: center;
 	padding: 0 0.5rem;
+	padding-left: var(--m);
+	top: 0;
 }
 
 .header-title {
@@ -13,5 +15,5 @@
 }
 
 .logo {
-	height: 3vw;
+	height: 6vh;
 }

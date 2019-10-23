@@ -9,19 +9,19 @@ const Searchbar = ({ topic, setTopic }) => {
 	};
 
 	const handleSubmit = (event) => {
+		event.preventDefault();
 		setTopic(searchbarText);
 	};
 	return (
-		<form onSubmit={handleSubmit}>
-			<label htmlFor={`topicSearchbar`}>
-				{`Search for a topic:`}
-				<input
-					type="text"
-					value={searchbarText}
-					name={`topicSearchbar`}
-					onChange={handleSearchbarChange}
-				></input>
-			</label>
+		<form onSubmit={handleSubmit} className={styles["searchbar-form"]}>
+			<label htmlFor={`topicSearchbar`}>{`Search for a topic:`}</label>
+			<input
+				type="text"
+				value={searchbarText}
+				name={`topicSearchbar`}
+				onChange={handleSearchbarChange}
+			></input>
+
 			<button type="submit">Search</button>
 		</form>
 	);

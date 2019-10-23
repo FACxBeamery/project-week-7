@@ -4,8 +4,25 @@
 	--beamery-grey: #dde3ed;
 	--beamery-dark-grey: #222d38;
 	--beamery-light-grey: #edf2f7;
-	--beamery-blue: ;
+	--beamery-white: #fafcff;
+	--beamery-blue: #3a7ee3;
+	--beamery-aqua: #50aac8;
+	--beamery-green: #46a682;
+	--beamery-yellow: #efb530;
+	--beamery-purple: #755fee;
+
+	--xs: 0.25rem;
+	--s: 0.5rem;
+	--sm: 0.75rem;
+	--m: 1rem;
+	--l: 2rem;
+	--xl: 4rem;
+	--xxl: 8rem;
 }
 body {
 	font-family: "Roboto", sans-serif;
+}
+
+.main {
+	display: flex;
 }
