@@ -2,9 +2,9 @@ import React from "react";
 import styles from "./App.module.css";
 import Header from "./components/header/header";
 import Form from "./components/form/form";
-import MainContent from "./components/mainContent/mainContent"
+import MainContent from "./components/mainContent/mainContent";
 
-
+const App = () => {
 	const [category, setCategory] = React.useState(null);
 	const [topic, setTopic] = React.useState(null);
 	const [person, setPerson] = React.useState(null);
@@ -30,12 +30,11 @@ import MainContent from "./components/mainContent/mainContent"
 					location={location}
 					setLocation={setLocation}
 					person={person}
-					setPerson={setPerson} >
-				</MainContent>
-			
+					setPerson={setPerson}
+				></MainContent>
 			</div>
 		</>
 	);
-}
+};
 
 export default App;
