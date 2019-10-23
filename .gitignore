@@ -59,3 +59,7 @@ typings/
 
 # next.js build output
 .next
+
+# data to initialize
+src/initialDataPeople.js
+src/initialDataTopics.js
