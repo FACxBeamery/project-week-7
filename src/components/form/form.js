@@ -12,6 +12,7 @@ const Form = ({
 }) => {
 	return (
 		<form className={styles["form"]}>
+			<h2>Filters</h2>
 			<Select
 				category={category}
 				setCategory={setCategory}

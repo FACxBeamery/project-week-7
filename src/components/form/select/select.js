@@ -29,19 +29,25 @@ const Select = ({
 	};
 
 	return (
-		<select
-			value={valueName === "category" ? category : location}
-			onChange={(event) =>
-				handleSelectChange(
-					event,
-					valueName === "category" ? setCategory : setLocation
-				)
-			}
-		>
-			<Option
-				options={valueName === "category" ? categories : locations}
-			></Option>
-		</select>
+		<div className={styles["select-option"]}>
+			<label htmlFor={`select${valueName}`}>
+				{valueName.charAt(0).toUpperCase() + valueName.slice(1) + ":"}
+			</label>
+			<select
+				value={valueName === "category" ? category : location}
+				onChange={(event) =>
+					handleSelectChange(
+						event,
+						valueName === "category" ? setCategory : setLocation
+					)
+				}
+				name={`select${valueName}`}
+			>
+				<Option
+					options={valueName === "category" ? categories : locations}
+				></Option>
+			</select>
+		</div>
 	);
 };
 

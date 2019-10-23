@@ -1,5 +1,29 @@
 .form {
-	background-color: #222d38;
+	background-color: var(--beamery-dark-grey);
 	display: flex;
 	flex-direction: column;
+	width: 15vw;
+	height: 90vh;
+	bottom: 0;
+	color: var(--beamery-white);
+	padding: var(--m) var(--m);
+	padding-left: var(--m);
+}
+select {
+	background-color: var(--beamery-white);
+	margin-bottom: var(--m);
+}
+
+label {
+	margin-bottom: var(--xs);
+}
+
+input {
+	margin-bottom: var(--s);
+}
+
+h2 {
+	margin: 0;
+	margin-bottom: var(--m);
+	font-weight: normal;
 }
