@@ -1,0 +1,5 @@
+.nav-container {
+	background-color: #222d38;
+	display: flex;
+	flex-direction: column;
+}

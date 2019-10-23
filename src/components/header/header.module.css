@@ -1,0 +1,17 @@
+.header-container {
+	background-color: #fafcff;
+	display: flex;
+	justify-content: space-between;
+	height: 5vw;
+	vertical-align: middle;
+	align-items: center;
+	padding: 0 0.5rem;
+}
+
+.header-title {
+	font-weight: 700;
+}
+
+.logo {
+	height: 3vw;
+}
