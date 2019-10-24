@@ -1,0 +1,16 @@
+/* from w3 schools tutorial */
+.modal {
+	position: absolute;
+	left: 40vw;
+	display: block;
+	width: 25vw;
+	height: 25vh;
+	z-index: 2;
+	border-radius: 0.5rem;
+	box-shadow: 0.75rem 0.75rem var(--beamery-blue);
+	background-color: var(--beamery-light-grey);
+	text-align: center;
+	color: var(--beamery-dark-grey);
+
+	padding: 1rem;
+}
