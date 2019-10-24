@@ -1,23 +1,19 @@
 /* from w3 schools tutorial */
 .modal {
-	position: fixed;
+	position: relative;
+	left: 40vw;
 	display: block;
 	width: 25vw;
 	height: 25vh;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background-color: rgba(0, 0, 0, 0.5);
 	z-index: 2;
 }
 
 .modal-content {
-	background-color: #e6e6e6;
+	background-color: var(--beamery-light-grey);
 	width: 50vw;
 	height: auto;
 	text-align: center;
-	color: rgb(130, 0, 0);
+	color: var(--beamery-dark-grey);
 	position: absolute;
 	top: 40%;
 	left: 25%;
