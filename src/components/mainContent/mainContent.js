@@ -12,11 +12,16 @@ const MainContent = ({
 	setTopic,
 	location,
 	setLocation,
-	person,
-	setPerson,
 	view,
-	setView
+	setView,
+	categoriesList,
+	topicData,
+	setTopicData,
+	peopleData,
+	setPeopleData,
+	locationsList
 }) => {
+	const [newCardClicked, setNewCardClicked] = React.useState(false);
 	return (
 		<div className={styles["main-content-container"]}>
 			<ContentHeader
@@ -26,22 +31,35 @@ const MainContent = ({
 				setView={setView}
 				setTopic={setTopic}
 				setCategory={setCategory}
+				setNewCardClicked={setNewCardClicked}
 			></ContentHeader>
 			{view === "category" ? (
 				<CategoryCards
-					allCategories={getCategories()}
+					allCategories={categoriesList}
 					setCategory={setCategory}
 					setView={setView}
+					setTopicData={setTopicData}
+					setNewCardClicked={setNewCardClicked}
 				></CategoryCards>
 			) : view === "topic" ? (
 				<TopicCards
-					allTopicsDB={getTopics(category)}
+					allTopicsDB={topicData}
 					setTopic={setTopic}
 					setView={setView}
 					category={category}
+					newCardClicked={newCardClicked}
+					setNewCardClicked={setNewCardClicked}
+					setPeopleData={setPeopleData}
+					categoriesList={categoriesList}
 				></TopicCards>
 			) : (
-				<PeopleCards allPeopleDB={getPeople(topic)}></PeopleCards>
+				<PeopleCards
+					allPeopleDB={peopleData}
+					newCardClicked={newCardClicked}
+					setNewCardClicked={setNewCardClicked}
+					locationsList={locationsList}
+					setPeopleData={setPeopleData}
+				></PeopleCards>
 			)}
 		</div>
 	);

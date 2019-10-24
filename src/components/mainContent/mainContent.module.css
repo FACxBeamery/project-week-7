@@ -1,3 +1,4 @@
 .main-content-container {
 	padding: var(--l);
+	flex-basis: 100%;
 }

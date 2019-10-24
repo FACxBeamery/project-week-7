@@ -8,7 +8,8 @@ const Form = ({
 	topic,
 	setTopic,
 	location,
-	setLocation
+	setLocation,
+	categoriesList
 }) => {
 	return (
 		<form className={styles["form"]}>
@@ -19,6 +20,7 @@ const Form = ({
 				location={location}
 				setLocation={setLocation}
 				valueName="category"
+				categoriesList={categoriesList}
 			></Select>
 			<Select
 				category={category}

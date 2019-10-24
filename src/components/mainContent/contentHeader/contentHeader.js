@@ -8,7 +8,8 @@ const ContentHeader = ({
 	topic,
 	setView,
 	setTopic,
-	setCategory
+	setCategory,
+	setNewCardClicked
 }) => {
 	const handleBackClick = (event, view, setView, setTopic, setCategory) => {
 		event.preventDefault();
@@ -19,10 +20,11 @@ const ContentHeader = ({
 			setView("category");
 			setCategory(null);
 		}
+		setNewCardClicked(false);
 	};
 	return (
-		<>
-			<div className={styles["headings-div"]}>
+		<div className={styles["content-header-container"]}>
+			<div className={styles["headings-container"]}>
 				<h2>Connect</h2>
 				{view === "category" ? (
 					<h3>Category view: select a category to see more</h3>
@@ -41,23 +43,32 @@ const ContentHeader = ({
 				)}
 			</div>
 			{view !== "category" ? (
-				<button
-					className={styles["back-button"]}
-					onClick={(event) =>
-						handleBackClick(
-							event,
-							view,
-							setView,
-							setTopic,
-							setCategory
-						)
-					}
-					type="submit"
-				>
-					⬅
-				</button>
+				<div className={styles["button-container"]}>
+					<button
+						className={styles["back-button"]}
+						onClick={(event) =>
+							handleBackClick(
+								event,
+								view,
+								setView,
+								setTopic,
+								setCategory
+							)
+						}
+						type="submit"
+						name="back-button"
+					>
+						↩
+					</button>
+					<label
+						className={styles["back-label"]}
+						htmlFor="back-button"
+					>
+						back to {view === "topic" ? "categories" : "topics"}
+					</label>
+				</div>
 			) : null}
-		</>
+		</div>
 	);
 };
 
