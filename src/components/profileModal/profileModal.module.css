@@ -1,21 +1,16 @@
 /* from w3 schools tutorial */
 .modal {
-	position: relative;
+	position: absolute;
 	left: 40vw;
 	display: block;
 	width: 25vw;
 	height: 25vh;
 	z-index: 2;
-}
-
-.modal-content {
+	border-radius: 0.5rem;
+	box-shadow: 0.75rem 0.75rem var(--beamery-blue);
 	background-color: var(--beamery-light-grey);
-	width: 50vw;
-	height: auto;
 	text-align: center;
 	color: var(--beamery-dark-grey);
-	position: absolute;
-	top: 40%;
-	left: 25%;
+
 	padding: 1rem;
 }
