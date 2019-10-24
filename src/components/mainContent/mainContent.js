@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./mainContent.module.css";
-import initialDataTopics from "../../initialDataTopics";
 const categories = ["frontend", "backend", "people", "non work"];
 const locations = ["London", "San Francisco", "Austin"];
 
