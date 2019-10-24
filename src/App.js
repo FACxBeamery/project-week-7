@@ -3,8 +3,14 @@ import styles from "./App.module.css";
 import Header from "./components/header/header";
 import Form from "./components/form/form";
 import MainContent from "./components/mainContent/mainContent";
+
 import getCategories from "./utils/get/getCategories";
 import getLocations from "./utils/get/getLocations";
+
+import ProfileModal from "./components/profileModal/profileModal";
+import getProfile from "./utils/get/getProfile";
+
+
 const App = () => {
 	const [view, setView] = React.useState("category");
 	const [category, setCategory] = React.useState(null);
@@ -17,7 +23,10 @@ const App = () => {
 	const [locationsList, setLocationsList] = React.useState(getLocations());
 	return (
 		<>
-			<Header></Header>
+			<Header setPerson={setPerson}></Header>
+			{person ? (
+				<ProfileModal profile={getProfile(person)}></ProfileModal>
+			) : null}
 			<div className={styles["main"]}>
 				<Form
 					category={category}
