@@ -4,7 +4,7 @@ import initialDataTopics from "../../initialDataTopics";
 const categories = ["frontend", "backend", "people", "non work"];
 const locations = ["London", "San Francisco", "Austin"];
 
-const CategoryCard = ({ allCategories }) => {
+const CategoryCards = ({ allCategories }) => {
 	return allCategories.map((category) => (
 		<div className="category-card">{category}</div>
 	));
@@ -12,10 +12,20 @@ const CategoryCard = ({ allCategories }) => {
 	// for each item in category to render a card with the category
 };
 
-const TopicCard = ({ allTopics }) => {
-	return allTopics.map((obj) => (
+const TopicCards = ({ allTopicsDB }) => {
+	return allTopicsDB.map((obj) => (
 		<div className="topic-card">
 			<p>{obj.topic}</p>
+		</div>
+	));
+};
+
+const PersonCards = ({ allPeopleDB }) => {
+	return allPeopleDB.map((obj) => (
+		<div className="person-card">
+			<p>{obj.name}</p>
+			<p>{obj.job}</p>
+			<p>{obj.office}</p>
 		</div>
 	));
 };
@@ -32,7 +42,7 @@ const MainContent = ({
 }) => {
 	return (
 		<div>
-			<CategoryCard allCategories={categories}></CategoryCard>
+			<CategoryCards allCategories={categories}></CategoryCards>
 			{/* if condition for filtering for topics<TopicCard allTopics={topics}></TopicCard> */}
 		</div>
 	);
