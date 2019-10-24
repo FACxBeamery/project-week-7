@@ -9,20 +9,8 @@
 	padding: var(--m) var(--m);
 	padding-left: var(--m);
 }
-select {
-	background-color: var(--beamery-white);
-	margin-bottom: var(--m);
-}
 
-label {
-	margin-bottom: var(--xs);
-}
-
-input {
-	margin-bottom: var(--s);
-}
-
-h2 {
+.filter-heading {
 	margin: 0;
 	margin-bottom: var(--m);
 	font-weight: normal;

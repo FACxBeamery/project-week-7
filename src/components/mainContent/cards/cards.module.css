@@ -1,0 +1,32 @@
+.card {
+	width: 20vw;
+	height: 20vw;
+	background-color: var(--beamery-grey);
+	border: none;
+	border-radius: 0.5rem;
+	margin-right: var(--l);
+	margin-bottom: var(--l);
+}
+.category-card {
+	font-size: 1.25rem;
+}
+
+.topic-card {
+	font-size: 1.25rem;
+}
+
+.frontend {
+	box-shadow: 0.75rem 0.75rem var(--beamery-blue);
+}
+
+.backend {
+	box-shadow: 0.75rem 0.75rem var(--beamery-green);
+}
+
+.people {
+	box-shadow: 0.75rem 0.75rem var(--beamery-aqua);
+}
+
+.non-work {
+	box-shadow: 0.75rem 0.75rem var(--beamery-yellow);
+}

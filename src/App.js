@@ -5,6 +5,7 @@ import Form from "./components/form/form";
 import MainContent from "./components/mainContent/mainContent";
 
 const App = () => {
+	const [view, setView] = React.useState("category");
 	const [category, setCategory] = React.useState(null);
 	const [topic, setTopic] = React.useState(null);
 	const [person, setPerson] = React.useState(null);
@@ -31,6 +32,8 @@ const App = () => {
 					setLocation={setLocation}
 					person={person}
 					setPerson={setPerson}
+					view={view}
+					setView={setView}
 				></MainContent>
 			</div>
 		</>

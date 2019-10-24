@@ -1,34 +1,10 @@
 import React from "react";
 import styles from "./mainContent.module.css";
-const categories = ["frontend", "backend", "people", "non work"];
-const locations = ["London", "San Francisco", "Austin"];
-
-const CategoryCards = ({ allCategories }) => {
-	return allCategories.map((category) => (
-		<div className="category-card">{category}</div>
-	));
-
-	// for each item in category to render a card with the category
-};
-
-const TopicCards = ({ allTopicsDB }) => {
-	return allTopicsDB.map((obj) => (
-		<div className="topic-card">
-			<p>{obj.topic}</p>
-		</div>
-	));
-};
-
-const PersonCards = ({ allPeopleDB }) => {
-	return allPeopleDB.map((obj) => (
-		<div className="person-card">
-			<p>{obj.name}</p>
-			<p>{obj.job}</p>
-			<p>{obj.office}</p>
-		</div>
-	));
-};
-
+import getTopics from "../../utils/get/getTopics";
+import getCategories from "../../utils/get/getCategories";
+import getPeople from "../../utils/get/getPeople";
+import { CategoryCards, TopicCards, PeopleCards } from "./cards/cards";
+import ContentHeader from "./contentHeader/contentHeader";
 const MainContent = ({
 	category,
 	setCategory,
@@ -37,24 +13,38 @@ const MainContent = ({
 	location,
 	setLocation,
 	person,
-	setPerson
+	setPerson,
+	view,
+	setView
 }) => {
 	return (
-		<div>
-			<CategoryCards allCategories={categories}></CategoryCards>
-			{/* if condition for filtering for topics<TopicCard allTopics={topics}></TopicCard> */}
+		<div className={styles["main-content-container"]}>
+			<ContentHeader
+				view={view}
+				category={category}
+				topic={topic}
+				setView={setView}
+				setTopic={setTopic}
+				setCategory={setCategory}
+			></ContentHeader>
+			{view === "category" ? (
+				<CategoryCards
+					allCategories={getCategories()}
+					setCategory={setCategory}
+					setView={setView}
+				></CategoryCards>
+			) : view === "topic" ? (
+				<TopicCards
+					allTopicsDB={getTopics(category)}
+					setTopic={setTopic}
+					setView={setView}
+					category={category}
+				></TopicCards>
+			) : (
+				<PeopleCards allPeopleDB={getPeople(topic)}></PeopleCards>
+			)}
 		</div>
 	);
 };
 
-// const Option = ({ options }) => {
-// 	const initialArray = [
-// 		<option hidden disabled selected value>
-// 			All
-// 		</option>
-// 	];
-// 	return initialArray.concat(
-// 		options.map((option) => <option value={option}>{option}</option>)
-// 	);
-// };
 export default MainContent;

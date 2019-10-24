@@ -1,5 +1,4 @@
 const ObjectID = require("mongodb").ObjectID;
-​
 const initialDataTopics = [
 	{
 		_id: ObjectID("507f1f77bcf86cd799439011"),
@@ -17,5 +16,4 @@ const initialDataTopics = [
 		]
 	}
 ];
-​
 module.exports = initialDataTopics;

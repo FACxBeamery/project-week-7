@@ -14,15 +14,21 @@ const Searchbar = ({ topic, setTopic }) => {
 	};
 	return (
 		<form onSubmit={handleSubmit} className={styles["searchbar-form"]}>
-			<label htmlFor={`topicSearchbar`}>{`Search for a topic:`}</label>
+			<label
+				htmlFor={`topicSearchbar`}
+				className={styles["searchbar-label"]}
+			>{`Search for a topic:`}</label>
 			<input
 				type="text"
 				value={searchbarText}
 				name={`topicSearchbar`}
 				onChange={handleSearchbarChange}
+				className={styles["searchbar-input"]}
 			></input>
 
-			<button type="submit">Search</button>
+			<button type="submit" className={styles["searchbar-submit"]}>
+				Search
+			</button>
 		</form>
 	);
 };
