@@ -29,8 +29,11 @@ const Select = ({
 	};
 
 	return (
-		<div className={styles["select-option"]}>
-			<label htmlFor={`select${valueName}`}>
+		<div className={styles["select-label-container"]}>
+			<label
+				htmlFor={`select${valueName}`}
+				className={styles["select-label"]}
+			>
 				{valueName.charAt(0).toUpperCase() + valueName.slice(1) + ":"}
 			</label>
 			<select
@@ -42,9 +45,11 @@ const Select = ({
 					)
 				}
 				name={`select${valueName}`}
+				className={styles["select-dropdown"]}
 			>
 				<Option
 					options={valueName === "category" ? categories : locations}
+					className={styles["select-option"]}
 				></Option>
 			</select>
 		</div>

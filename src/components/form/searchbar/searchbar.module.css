@@ -4,20 +4,19 @@
 	flex-direction: column;
 }
 
-input {
-	width: 14vw;
+.searchbar-input {
+	margin-bottom: var(--s);
 }
 
-button {
+.searchbar-label {
+	margin-bottom: var(--xs);
+	align-self: flex-start;
+}
+
+.searchbar-submit {
 	background-color: var(--beamery-blue);
 	font-size: var(--m);
 	color: white;
 	border: none;
 	border-radius: var(--s);
-	width: 5vw;
-	height: 2.5vw;
-}
-
-label {
-	align-self: flex-start;
 }
