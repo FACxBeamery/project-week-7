@@ -1,9 +1,5 @@
 import React from "react";
 import styles from "./select.module.css";
-//const categories = getCategories()
-
-const categories = ["frontend", "backend", "people", "non-work"];
-const locations = ["London", "San Francisco", "Austin"];
 
 const Option = ({ options }) => {
 	const initialArray = [
@@ -21,8 +17,10 @@ const Select = ({
 	setCategory,
 	location,
 	setLocation,
-	valueName
+	valueName,
+	categoriesList
 }) => {
+	const locations = ["London", "San Francisco", "Austin"];
 	const handleSelectChange = (event, setState) => {
 		event.preventDefault();
 		setState(event.target.value);
@@ -48,7 +46,9 @@ const Select = ({
 				className={styles["select-dropdown"]}
 			>
 				<Option
-					options={valueName === "category" ? categories : locations}
+					options={
+						valueName === "category" ? categoriesList : locations
+					}
 					className={styles["select-option"]}
 				></Option>
 			</select>

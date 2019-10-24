@@ -1,6 +1,6 @@
 .card {
-	width: 20vw;
-	height: 20vw;
+	width: 12.5rem;
+	height: 12.5rem;
 	background-color: var(--beamery-grey);
 	border: none;
 	border-radius: 0.5rem;

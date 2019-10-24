@@ -1,0 +1,23 @@
+.content-header-container {
+	display: flex;
+	justify-content: space-between;
+}
+
+.headings-container {
+}
+
+.button-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.back-button {
+	font-size: var(--xl);
+	border: none;
+	background: none;
+	padding: none;
+}
+
+.back-label {
+	text-align: right;
+}
