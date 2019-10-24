@@ -1,4 +1,4 @@
-import dummyData from "../../dummyPeople";
+import dummyData from "../../initialDataPeople";
 
 const getProfile = (name) => {
 	return dummyData.find((obj) => obj.name === name);
