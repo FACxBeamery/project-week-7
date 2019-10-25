@@ -12,16 +12,27 @@ const Header = ({ setPerson }) => {
 
 	return (
 		<header className={styles["header-container"]}>
-			<img src={logo} alt="Beamery Logo" className={styles["logo"]}></img>
-			<p className={styles["header-title"]}>Connect</p>
-			<form onSubmit={handleSubmit}>
-				<label htmlFor="search-name">
-					Search for a person
+			<div className={styles["logo-title-container"]}>
+				<img
+					src={logo}
+					alt="Beamery Logo"
+					className={styles["logo"]}
+				></img>
+				<h1 className={styles["header-title"]}>Connect</h1>
+			</div>
+			<form onSubmit={handleSubmit} className={styles["person-form"]}>
+				<label htmlFor="search-name" className={styles["input-label"]}>
+					Search for a person:
 					<input
 						onChange={(e) => setNameSearched(e.target.value)}
+						className={styles["name-input"]}
 					></input>
 				</label>
-				<button type="submit" id="submit-search-name">
+				<button
+					type="submit"
+					className={styles["submit-button"]}
+					id="submit-search-name"
+				>
 					Search
 				</button>
 			</form>

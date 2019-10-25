@@ -15,3 +15,12 @@
 	margin-bottom: var(--m);
 	font-weight: normal;
 }
+
+@media only screen and (max-width: 600px) {
+	.form {
+		width: 100vw;
+		height: 10vh;
+		flex-direction: row;
+		justify-content: space-evenly;
+	}
+}

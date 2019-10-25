@@ -2,7 +2,6 @@
 	background-color: #fafcff;
 	display: flex;
 	justify-content: space-between;
-	height: 10vh;
 	vertical-align: middle;
 	align-items: center;
 	padding: 0 0.5rem;
@@ -10,10 +9,72 @@
 	top: 0;
 }
 
+.logo-title-container {
+	display: flex;
+}
+
 .header-title {
 	font-weight: 700;
+	font-style: italic;
+	font-size: 2.25rem;
+	padding: var(--xs) 0 0 var(--s);
+	margin: 0;
+	color: var(--beamery-blue);
 }
 
 .logo {
 	height: 6vh;
+}
+
+.submit-button {
+	background-color: var(--beamery-blue);
+	font-size: var(--m);
+	color: white;
+	border: none;
+	border-radius: var(--xs);
+	margin-left: var(--s);
+}
+
+.name-input {
+	margin-left: var(--s);
+}
+
+.input-label {
+	font-style: italic;
+	display: flex;
+}
+
+.person-form {
+	display: flex;
+}
+
+@media only screen and (max-width: 750px) {
+	.header-container {
+		flex-direction: column;
+		padding: var(--s);
+	}
+
+	.logo-title-container {
+		padding-bottom: var(--s);
+	}
+
+	.person-form {
+		padding-bottom: var(--l);
+	}
+}
+
+@media only screen and (max-width: 450px) {
+	.person-form {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.input-label {
+		flex-direction: column;
+		padding-bottom: var(--s);
+	}
+
+	.name-input {
+		padding-bottom: var(--s);
+	}
 }
