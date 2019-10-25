@@ -18,5 +18,5 @@
 	font-size: var(--m);
 	color: white;
 	border: none;
-	border-radius: var(--s);
+	border-radius: var(--xs);
 }

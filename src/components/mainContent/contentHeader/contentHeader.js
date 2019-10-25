@@ -33,7 +33,6 @@ const ContentHeader = ({
 						{`${capitalizeFirstLetter(
 							category
 						)} topics: select a topic to see more`}
-						s
 					</h3>
 				) : (
 					<h3>
