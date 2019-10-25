@@ -1,16 +1,16 @@
 .card {
-	width: 12.5rem;
-	height: 12.5rem;
-	background-color: var(--beamery-grey);
+	width: 10rem;
+	height: 10rem;
+	background-color: var(--beamery-light-grey);
 	border: none;
-	border-radius: 0.5rem;
+	border-radius: 0.25rem;
 	margin-right: var(--l);
 	margin-bottom: var(--l);
-	border: var(--beamery-dark-grey) solid;
+	border: #a2a2a2 solid 0.0625rem;
 }
 
 .new-card-button {
-	font-size: 5rem;
+	font-size: 3rem;
 	font-weight: 700;
 	cursor: pointer;
 }

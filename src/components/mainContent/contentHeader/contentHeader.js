@@ -25,9 +25,11 @@ const ContentHeader = ({
 	return (
 		<div className={styles["content-header-container"]}>
 			<div className={styles["headings-container"]}>
-				<h2>Connect</h2>
+				<h2 className={styles["heading"]}>Connect</h2>
 				{view === "category" ? (
-					<h3>Category view: select a category to see more</h3>
+					<h3 className={styles["description"]}>
+						Category view: select a category to see more
+					</h3>
 				) : view === "topic" ? (
 					<h3>
 						{`${capitalizeFirstLetter(
