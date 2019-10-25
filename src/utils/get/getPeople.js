@@ -1,6 +1,6 @@
 import dummyData from "../../dummyPeople";
 
-const getPeople = (location) => {
+const getPeople = (topic, location) => {
 	return dummyData;
 };
 

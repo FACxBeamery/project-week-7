@@ -2,29 +2,19 @@ import React from "react";
 import styles from "./form.module.css";
 import Searchbar from "./searchbar/searchbar";
 import Select from "./select/select";
-const Form = ({
-	category,
-	setCategory,
-	topic,
-	setTopic,
-	location,
-	setLocation,
-	categoriesList
-}) => {
+const Form = ({ topic, setTopic, location, setLocation }) => {
 	return (
 		<form className={styles["form"]}>
 			<h2 className={styles["filter-heading"]}>Filters</h2>
-			<Select
+			{/* <Select
 				category={category}
 				setCategory={setCategory}
 				location={location}
 				setLocation={setLocation}
 				valueName="category"
 				categoriesList={categoriesList}
-			></Select>
+			></Select> */}
 			<Select
-				category={category}
-				setCategory={setCategory}
 				location={location}
 				setLocation={setLocation}
 				valueName="location"

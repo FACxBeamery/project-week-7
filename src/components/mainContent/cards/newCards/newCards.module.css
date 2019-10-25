@@ -1,0 +1,35 @@
+.card {
+	width: 12.5rem;
+	height: 12.5rem;
+	background-color: var(--beamery-grey);
+	border: none;
+	border-radius: 0.5rem;
+	margin-right: var(--l);
+	margin-bottom: var(--l);
+}
+
+.new-card-button {
+	font-size: 5rem;
+	font-weight: 700;
+}
+
+.new-card-submit {
+	background-color: var(--beamery-blue);
+	font-size: var(--m);
+	color: white;
+	border: none;
+	border-radius: var(--s);
+}
+
+.new-card-form {
+	padding: var(--m);
+}
+
+.input-label {
+	margin-bottom: var(--xs);
+	align-self: flex-start;
+}
+
+.title-input {
+	margin-bottom: var(--s);
+}

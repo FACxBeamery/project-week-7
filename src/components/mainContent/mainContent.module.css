@@ -2,3 +2,8 @@
 	padding: var(--l);
 	flex-basis: 100%;
 }
+
+.cards-container {
+	display: flex;
+	flex-wrap: wrap;
+}

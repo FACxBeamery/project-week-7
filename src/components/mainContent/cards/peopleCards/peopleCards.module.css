@@ -7,12 +7,21 @@
 	margin-right: var(--l);
 	margin-bottom: var(--l);
 }
-.category-card {
+
+.person-name {
 	font-size: 1.25rem;
+	font-weight: 700;
+	padding: var(--m);
+	padding-bottom: var(--s);
 }
 
-.topic-card {
-	font-size: 1.25rem;
+.person-job {
+	font-style: italic;
+	padding: 0 var(--m);
+}
+
+.person-office {
+	padding: 0 var(--m);
 }
 
 .frontend {
