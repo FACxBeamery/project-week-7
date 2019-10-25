@@ -20,7 +20,10 @@ const App = () => {
 		<>
 			<Header setPerson={setPerson}></Header>
 			{person ? (
-				<ProfileModal profile={getProfile(person)}></ProfileModal>
+				<ProfileModal
+					setPerson={setPerson}
+					profile={getProfile(person)}
+				></ProfileModal>
 			) : null}
 			<div className={styles["main"]}>
 				<Form
