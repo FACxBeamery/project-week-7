@@ -11,6 +11,7 @@
 .new-card-button {
 	font-size: 5rem;
 	font-weight: 700;
+	cursor: pointer;
 }
 
 .new-card-submit {
@@ -19,6 +20,7 @@
 	color: white;
 	border: none;
 	border-radius: var(--xs);
+	cursor: pointer;
 }
 
 .new-card-form {

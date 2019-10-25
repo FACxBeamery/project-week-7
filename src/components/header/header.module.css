@@ -30,6 +30,7 @@
 	border: none;
 	border-radius: var(--xs);
 	margin-left: var(--s);
+	cursor: pointer;
 }
 
 .name-input {
