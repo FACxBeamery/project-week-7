@@ -6,6 +6,7 @@
 	border-radius: 0.5rem;
 	margin-right: var(--l);
 	margin-bottom: var(--l);
+	border: var(--beamery-dark-grey) solid;
 }
 
 .new-card-button {

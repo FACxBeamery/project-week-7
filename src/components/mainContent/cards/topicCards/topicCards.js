@@ -37,10 +37,10 @@ const TopicCards = ({
 		),
 		allTopicsDB.map((obj) => (
 			<button
+				key={obj._id}
 				className={`${styles["card"]} ${styles["topic-card"]} ${
 					styles[category]
 				}`}
-				key={obj._id}
 				onClick={(event) =>
 					handleTopicClick(event, obj, setTopic, setView)
 				}

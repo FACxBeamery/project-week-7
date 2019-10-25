@@ -3,12 +3,16 @@ import styles from "./select.module.css";
 
 const Option = ({ options }) => {
 	const initialArray = [
-		<option hidden disabled selected value>
+		<option value key="All">
 			All
 		</option>
 	];
 	return initialArray.concat(
-		options.map((option) => <option value={option}>{option}</option>)
+		options.map((option) => (
+			<option value={option} key={option}>
+				{option}
+			</option>
+		))
 	);
 };
 

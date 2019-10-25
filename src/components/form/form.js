@@ -4,7 +4,7 @@ import Searchbar from "./searchbar/searchbar";
 import Select from "./select/select";
 const Form = ({ topic, setTopic, location, setLocation }) => {
 	return (
-		<form className={styles["form"]}>
+		<div className={styles["form"]}>
 			<h2 className={styles["filter-heading"]}>Filters</h2>
 			{/* <Select
 				category={category}
@@ -20,7 +20,7 @@ const Form = ({ topic, setTopic, location, setLocation }) => {
 				valueName="location"
 			></Select>
 			<Searchbar topic={topic} setTopic={setTopic}></Searchbar>
-		</form>
+		</div>
 	);
 };
 

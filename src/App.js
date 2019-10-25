@@ -13,7 +13,7 @@ import getProfile from "./utils/get/getProfile";
 const App = () => {
 	const [topic, setTopic] = React.useState(null);
 	const [person, setPerson] = React.useState(null);
-	const [location, setLocation] = React.useState(null);
+	const [location, setLocation] = React.useState("All");
 	const [categoriesList] = React.useState(getCategories());
 	const [locationsList] = React.useState(getLocations());
 	return (

@@ -6,6 +6,7 @@
 	border-radius: 0.5rem;
 	margin-right: var(--l);
 	margin-bottom: var(--l);
+	border: black solid;
 }
 .category-card {
 	cursor: pointer;

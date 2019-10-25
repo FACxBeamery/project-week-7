@@ -26,10 +26,17 @@ const PeopleCards = ({
 			<div
 				className={`${styles["card"]} ${styles["person-card"]}`}
 				key={obj._id}
+				name={obj._id}
 			>
-				<p className={styles["person-name"]}>{obj.name}</p>
-				<p className={styles["person-job"]}>{obj.job}</p>
-				<p className={styles["person-office"]}>{obj.office}</p>
+				<p className={styles["person-name"]} key={obj.name}>
+					{obj.name}
+				</p>
+				<p className={styles["person-job"]} key={obj.job}>
+					{obj.job}
+				</p>
+				<p className={styles["person-office"]} key={obj.office}>
+					{obj.office}
+				</p>
 			</div>
 		))
 	];

@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./searchbar.module.css";
 
 const Searchbar = ({ topic, setTopic }) => {
-	const [searchbarText, setSearchbarText] = React.useState(null);
+	const [searchbarText, setSearchbarText] = React.useState("");
 
 	const handleSearchbarChange = (event) => {
 		setSearchbarText(event.target.value);
