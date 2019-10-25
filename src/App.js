@@ -10,7 +10,6 @@ import getLocations from "./utils/get/getLocations";
 import ProfileModal from "./components/profileModal/profileModal";
 import getProfile from "./utils/get/getProfile";
 
-
 const App = () => {
 	const [view, setView] = React.useState("category");
 	const [category, setCategory] = React.useState(null);
@@ -25,7 +24,10 @@ const App = () => {
 		<>
 			<Header setPerson={setPerson}></Header>
 			{person ? (
-				<ProfileModal profile={getProfile(person)}></ProfileModal>
+				<ProfileModal
+					setPerson={setPerson}
+					profile={getProfile(person)}
+				></ProfileModal>
 			) : null}
 			<div className={styles["main"]}>
 				<Form
