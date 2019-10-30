@@ -26,6 +26,7 @@
 
 .back-label {
 	text-align: right;
+	margin-bottom: var(--s);
 }
 
 .heading {
