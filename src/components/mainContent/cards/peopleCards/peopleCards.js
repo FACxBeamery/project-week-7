@@ -9,6 +9,7 @@ const PeopleCards = ({
 	locationsList,
 	setPeopleData
 }) => {
+	console.log(allPeopleDB);
 	return [
 		newCardClicked ? (
 			<NewCardForm

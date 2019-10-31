@@ -15,10 +15,8 @@ const ContentHeader = ({
 		event.preventDefault();
 		if (view === "people") {
 			setView("topic");
-			setTopic(null);
 		} else if (view === "topic") {
 			setView("category");
-			setCategory(null);
 		}
 		setNewCardClicked(false);
 	};

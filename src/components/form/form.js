@@ -2,7 +2,20 @@ import React from "react";
 import styles from "./form.module.css";
 import Searchbar from "./searchbar/searchbar";
 import Select from "./select/select";
-const Form = ({ topic, setTopic, location, setLocation }) => {
+const Form = ({
+	view,
+	setView,
+	topic,
+	setTopic,
+	location,
+	setLocation,
+	peopleData,
+	setPeopleData,
+	category,
+	setCategory,
+	topicData,
+	setTopicData
+}) => {
 	return (
 		<div className={styles["form"]}>
 			<h2 className={styles["filter-heading"]}>Filters</h2>
@@ -19,7 +32,18 @@ const Form = ({ topic, setTopic, location, setLocation }) => {
 				setLocation={setLocation}
 				valueName="location"
 			></Select>
-			<Searchbar topic={topic} setTopic={setTopic}></Searchbar>
+			<Searchbar
+				view={view}
+				setView={setView}
+				topic={topic}
+				setTopic={setTopic}
+				peopleData={peopleData}
+				setPeopleData={setPeopleData}
+				category={category}
+				setCategory={setCategory}
+				topicData={topicData}
+				setTopicData={setTopicData}
+			></Searchbar>
 		</div>
 	);
 };

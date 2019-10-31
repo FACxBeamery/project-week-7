@@ -5,16 +5,20 @@ import TopicCards from "./cards/topicCards/topicCards";
 import PeopleCards from "./cards/peopleCards/peopleCards";
 import ContentHeader from "./contentHeader/contentHeader";
 const MainContent = ({
+	view,
+	setView,
 	topic,
 	setTopic,
+	peopleData,
+	setPeopleData,
 	categoriesList,
 	locationsList,
-	location
+	location,
+	category,
+	setCategory,
+	topicData,
+	setTopicData
 }) => {
-	const [category, setCategory] = React.useState(null);
-	const [view, setView] = React.useState("category");
-	const [peopleData, setPeopleData] = React.useState(null);
-	const [topicData, setTopicData] = React.useState(null);
 	const [newCardClicked, setNewCardClicked] = React.useState(false);
 	return (
 		<div className={styles["main-content-container"]}>
