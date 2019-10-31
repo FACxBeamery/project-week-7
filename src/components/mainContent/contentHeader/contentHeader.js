@@ -58,6 +58,7 @@ const ContentHeader = ({
 						}
 						type="submit"
 						name="back-button"
+						data-testid="back-button"
 					>
 						↩
 					</button>
