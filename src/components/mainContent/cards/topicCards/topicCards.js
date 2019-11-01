@@ -30,6 +30,7 @@ const TopicCards = ({
 				setTopicData={setTopicData}
 				newCardType="topic"
 				key="form"
+				category={category}
 			></NewCardForm>
 		) : (
 			<NewCardButton
