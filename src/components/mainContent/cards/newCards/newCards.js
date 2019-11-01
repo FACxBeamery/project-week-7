@@ -59,6 +59,7 @@ const NewCardForm = ({
 							type="text"
 							key="input new card"
 							name="newTopicTitle"
+							id="newTopicTitle"
 							value={newTopicTitle}
 							onChange={(e) => setNewTopicTitle(e.target.value)}
 							className={styles["title-input"]}
@@ -83,6 +84,7 @@ const NewCardForm = ({
 							key="input 2 new card"
 							type="text"
 							name="newPersonName"
+							id="newPersonName"
 							value={newPersonName}
 							onChange={(e) => setNewPersonName(e.target.value)}
 							className={styles["title-input"]}

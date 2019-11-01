@@ -26,6 +26,7 @@ const Header = ({ setPerson }) => {
 					<input
 						onChange={(e) => setNameSearched(e.target.value)}
 						className={styles["name-input"]}
+						id="search-name"
 					></input>
 				</label>
 				<button

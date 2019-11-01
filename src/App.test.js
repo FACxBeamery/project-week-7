@@ -1,14 +1,31 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import MainContent from "./components/mainContent/mainContent";
+
 import { render, cleanup, fireEvent } from "@testing-library/react";
+import MainContent from "./components/mainContent/mainContent";
+
 
 it("renders without crashing", () => {
 	const div = document.createElement("div");
 	ReactDOM.render(<App />, div);
 	ReactDOM.unmountComponentAtNode(div);
 });
+
+describe("form works as expected", () => {
+	const { getByText, getByLabelText } = render(<App />);
+
+	const searchbar = getByLabelText("Search for a topic:");
+	const submitButton = getByText("Submit");
+	fireEvent.change(searchbar, {
+		target: { value: "React" }
+	});
+
+	fireEvent.click(submitButton);
+
+	test("on submit people interested in react are seen", () => {
+		getByText("Martha Lambert");
+	});
 
 afterEach(cleanup);
 //stops event listeners after test
@@ -66,4 +83,5 @@ describe(" main content rendering ", () => {
 	// categoriesList.forEach((category) =>
 	// 	getByText(capitalizeFirstLetter(category))
 	// );
+
 });

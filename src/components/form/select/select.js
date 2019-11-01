@@ -47,6 +47,7 @@ const Select = ({
 					)
 				}
 				name={`select${valueName}`}
+				id={`select${valueName}`}
 				className={styles["select-dropdown"]}
 			>
 				<Option
