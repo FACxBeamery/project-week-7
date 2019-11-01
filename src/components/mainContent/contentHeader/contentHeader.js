@@ -29,13 +29,13 @@ const ContentHeader = ({
 						Category view: select a category to see more
 					</h3>
 				) : view === "topic" ? (
-					<h3>
+					<h3 className={styles["description"]}>
 						{`${capitalizeFirstLetter(
 							category
 						)} topics: select a topic to see more`}
 					</h3>
 				) : (
-					<h3>
+					<h3 className={styles["description"]}>
 						{capitalizeFirstLetter(topic)}: find other people
 						interested below
 					</h3>
@@ -56,6 +56,7 @@ const ContentHeader = ({
 						}
 						type="submit"
 						name="back-button"
+						id="back-button"
 						data-testid="back-button"
 					>
 						↩

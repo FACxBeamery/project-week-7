@@ -51,6 +51,7 @@ const Searchbar = ({
 				type="text"
 				value={searchbarText}
 				name={`topicSearchbar`}
+				id="topicSearchbar"
 				onChange={handleSearchbarChange}
 				className={styles["searchbar-input"]}
 			></input>
