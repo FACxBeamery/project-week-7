@@ -22,16 +22,17 @@ const NewCardForm = ({
 	locationsList,
 	categoriesList,
 	setTopicData,
-	setPeopleData
+	setPeopleData,
+	category
 }) => {
 	const [newTopicTitle, setNewTopicTitle] = React.useState("");
-	const [newTopicCategory, setNewTopicCategory] = React.useState(null);
+	//	const [newTopicCategory, setNewTopicCategory] = React.useState(null);
 	const [newPersonName, setNewPersonName] = React.useState("");
 	const [newPersonLocation, setNewPersonLocation] = React.useState("");
 	const handleNewCardSubmit = () => {
 		if (newCardType === "topic") {
 			setTopicData(
-				addTopic({ topic: newTopicTitle, category: newTopicCategory })
+				addTopic({ topic: newTopicTitle, category: category })
 			);
 		} else if (newCardType === "person") {
 			setPeopleData(
@@ -57,31 +58,28 @@ const NewCardForm = ({
 						</label>
 						<input
 							type="text"
-							key="input new card"
 							name="newTopicTitle"
 							id="newTopicTitle"
 							value={newTopicTitle}
 							onChange={(e) => setNewTopicTitle(e.target.value)}
 							className={styles["title-input"]}
 						></input>
-						<Select
-							category={newTopicCategory}
-							setCategory={setNewTopicCategory}
+						{/* <Select
+							//category={newTopicCategory}
+							//setCategory={setNewTopicCategory}
 							valueName="category"
 							categoriesList={categoriesList}
-						></Select>{" "}
+						></Select>{" "} */}
 					</>
 				) : (
 					<>
 						<label
-							key="label new card"
 							htmlFor="newPersonName"
 							className={styles["input-label"]}
 						>
 							Enter a name:
 						</label>
 						<input
-							key="input 2 new card"
 							type="text"
 							name="newPersonName"
 							id="newPersonName"
@@ -98,11 +96,7 @@ const NewCardForm = ({
 					</>
 				)}
 
-				<button
-					key="button new card"
-					type="submit"
-					className={styles["new-card-submit"]}
-				>
+				<button type="submit" className={styles["new-card-submit"]}>
 					Submit
 				</button>
 			</form>
