@@ -29,6 +29,32 @@ const NewCardForm = ({
 	//	const [newTopicCategory, setNewTopicCategory] = React.useState(null);
 	const [newPersonName, setNewPersonName] = React.useState("");
 	const [newPersonLocation, setNewPersonLocation] = React.useState("");
+	const [errors, setErrors] = React.useState({
+		title: undefined,
+		name: undefined
+	});
+
+	console.log("errors =", errors);
+
+	const handleTitleChange = (event) => {
+		event.persist();
+		setNewTopicTitle(event.target.value);
+		if (event.target.value.length === 0) {
+			setErrors({ ...errors, title: true });
+		} else {
+			setErrors({ ...errors, title: false });
+		}
+	};
+
+	const handleNameChange = (event) => {
+		event.persist();
+		setNewPersonName(event.target.value);
+		if (event.target.value.length === 0) {
+			setErrors({ ...errors, name: true });
+		} else {
+			setErrors({ ...errors, name: false });
+		}
+	};
 	const handleNewCardSubmit = () => {
 		if (newCardType === "topic") {
 			setTopicData(
@@ -61,8 +87,12 @@ const NewCardForm = ({
 							name="newTopicTitle"
 							id="newTopicTitle"
 							value={newTopicTitle}
-							onChange={(e) => setNewTopicTitle(e.target.value)}
-							className={styles["title-input"]}
+							onChange={handleTitleChange}
+							className={`${styles["title-input"]} ${
+								errors.title === true
+									? styles["title-error"]
+									: null
+							}`}
 						></input>
 						{/* <Select
 							//category={newTopicCategory}
@@ -84,19 +114,36 @@ const NewCardForm = ({
 							name="newPersonName"
 							id="newPersonName"
 							value={newPersonName}
-							onChange={(e) => setNewPersonName(e.target.value)}
-							className={styles["title-input"]}
+							onChange={handleNameChange}
+							className={`${styles["title-input"]} ${
+								errors.name === true
+									? styles["title-error"]
+									: null
+							}`}
 						></input>
 						<Select
 							location={newPersonLocation}
 							setLocation={setNewPersonLocation}
 							valueName="location"
 							locationsList={locationsList}
+							className={styles["select-input"]}
 						></Select>
 					</>
 				)}
 
-				<button type="submit" className={styles["new-card-submit"]}>
+				<button
+					type="submit"
+					className={styles["new-card-submit"]}
+					disabled={
+						newCardType === "topic"
+							? errors.title === false
+								? null
+								: true
+							: errors.name === false
+							? null
+							: true
+					}
+				>
 					Submit
 				</button>
 			</form>

@@ -36,3 +36,7 @@
 .title-input {
 	margin-bottom: var(--s);
 }
+
+.title-error {
+	border: red solid 0.125rem;
+}
