@@ -20,16 +20,15 @@ const App = () => {
 	const [peopleData, setPeopleData] = React.useState(null);
 	const [category, setCategory] = React.useState(null);
 	const [topicData, setTopicData] = React.useState(null);
-	console.log(typeof setView);
+
 	return (
 		<>
-			<Header setPerson={setPerson} setView={setView}></Header>
-			{person ? (
-				<ProfileModal
-					setPerson={setPerson}
-					profile={getProfile(person)}
-				></ProfileModal>
-			) : null}
+			<Header
+				person={person}
+				setPerson={setPerson}
+				setView={setView}
+			></Header>
+
 			<div className={styles["main"]}>
 				<Form
 					view={view}
