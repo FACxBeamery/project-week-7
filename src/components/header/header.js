@@ -8,6 +8,7 @@ const Header = ({ setPerson }) => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		setPerson(nameSearched);
+		setNameSearched("");
 	};
 
 	return (
@@ -27,6 +28,7 @@ const Header = ({ setPerson }) => {
 						onChange={(e) => setNameSearched(e.target.value)}
 						className={styles["name-input"]}
 						id="search-name"
+						value={nameSearched}
 					></input>
 				</label>
 				<button

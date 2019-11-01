@@ -26,6 +26,7 @@ const Searchbar = ({
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		setTopic(searchbarText);
+		setSearchbarText("");
 	};
 	React.useEffect(() => {
 		console.log(topic);
