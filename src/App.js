@@ -23,7 +23,7 @@ const App = () => {
 	console.log(typeof setView);
 	return (
 		<>
-			<Header setPerson={setPerson}></Header>
+			<Header setPerson={setPerson} setView={setView}></Header>
 			{person ? (
 				<ProfileModal
 					setPerson={setPerson}

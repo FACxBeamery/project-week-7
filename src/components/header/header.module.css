@@ -10,6 +10,7 @@
 
 .logo-title-container {
 	display: flex;
+	cursor: pointer;
 }
 
 .header-title {
