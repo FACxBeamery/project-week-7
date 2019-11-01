@@ -34,7 +34,7 @@ const initialDataTopics = [
 		]
 	},
 	{
-		_id: ObjectID("54759eb3c090d83494e2d804"),
+		_id: "3",
 		category: "non-work",
 		topic: "gaming",
 		people: [
@@ -43,7 +43,7 @@ const initialDataTopics = [
 		]
 	},
 	{
-		_id: ObjectID("54759eb3c090d83494e2d804"),
+		_id: "4",
 		category: "non-work",
 		topic: "dogs",
 		people: [

@@ -21,7 +21,7 @@ const MainContent = ({
 }) => {
 	const [newCardClicked, setNewCardClicked] = React.useState(false);
 	return (
-		<div className={styles["main-content-container"]}>
+		<div key="" className={styles["main-content-container"]}>
 			<ContentHeader
 				view={view}
 				category={category}
@@ -31,8 +31,9 @@ const MainContent = ({
 				setCategory={setCategory}
 				setNewCardClicked={setNewCardClicked}
 			></ContentHeader>
-			<div className={styles["cards-container"]}>
-				{view === "category" ? (
+
+			{view === "category" ? (
+				<div key="category" className={styles["cards-container"]}>
 					<CategoryCards
 						allCategories={categoriesList}
 						setCategory={setCategory}
@@ -40,7 +41,9 @@ const MainContent = ({
 						setTopicData={setTopicData}
 						setNewCardClicked={setNewCardClicked}
 					></CategoryCards>
-				) : view === "topic" ? (
+				</div>
+			) : view === "topic" ? (
+				<div key="topic" className={styles["cards-container"]}>
 					<TopicCards
 						allTopicsDB={topicData}
 						setTopic={setTopic}
@@ -52,7 +55,9 @@ const MainContent = ({
 						categoriesList={categoriesList}
 						location={location}
 					></TopicCards>
-				) : (
+				</div>
+			) : (
+				<div key="people" className={styles["cards-container"]}>
 					<PeopleCards
 						allPeopleDB={peopleData}
 						newCardClicked={newCardClicked}
@@ -60,8 +65,8 @@ const MainContent = ({
 						locationsList={locationsList}
 						setPeopleData={setPeopleData}
 					></PeopleCards>
-				)}
-			</div>
+				</div>
+			)}
 		</div>
 	);
 };

@@ -29,10 +29,12 @@ const TopicCards = ({
 				categoriesList={categoriesList}
 				setTopicData={setTopicData}
 				newCardType="topic"
+				key="form"
 			></NewCardForm>
 		) : (
 			<NewCardButton
 				setNewCardClicked={setNewCardClicked}
+				key="button"
 			></NewCardButton>
 		),
 		allTopicsDB.map((obj) => (

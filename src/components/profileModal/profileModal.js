@@ -1,13 +1,11 @@
 import React from "react";
 import styles from "./profileModal.module.css";
-// `${styles["first--form--input"]} ${
-// 	styles["first--form--input--error"]
-// }`
+
 const profileModal = ({ profile, setPerson }) => {
 	const closeModal = () => {
 		setPerson(null);
 	};
-	/// we will need an extra argument for returning the interests
+
 	return (
 		<div className={`${styles["modal"]} ${styles["modal-content"]}`}>
 			<div className={styles["modal-heading"]}>

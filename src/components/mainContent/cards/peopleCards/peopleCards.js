@@ -17,10 +17,12 @@ const PeopleCards = ({
 				newCardType="person"
 				locationsList={locationsList}
 				setPeopleData={setPeopleData}
+				key="people form"
 			></NewCardForm>
 		) : (
 			<NewCardButton
 				setNewCardClicked={setNewCardClicked}
+				key="people button"
 			></NewCardButton>
 		),
 		allPeopleDB.map((obj) => (
