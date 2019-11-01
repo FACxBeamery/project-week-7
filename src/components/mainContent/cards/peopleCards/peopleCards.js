@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./peopleCards.module.css";
 import { NewCardButton, NewCardForm } from "../newCards/newCards";
+import profilePic from "../../../../images/profilePic.jpg";
 
 const PeopleCards = ({
 	allPeopleDB,
@@ -37,6 +38,11 @@ const PeopleCards = ({
 				<p className={styles["person-job"]} key={obj.job}>
 					{obj.job}
 				</p>
+				<img
+					src={profilePic}
+					className={styles["profile-picture"]}
+					alt="person's profile"
+				></img>
 				<p className={styles["person-office"]} key={obj.office}>
 					{obj.office}
 				</p>

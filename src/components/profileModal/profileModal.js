@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./profileModal.module.css";
+import profilePic from "../../images/profilePic.jpg";
 
 const profileModal = ({ profile, setPerson }) => {
 	const closeModal = () => {
@@ -17,6 +18,11 @@ const profileModal = ({ profile, setPerson }) => {
 					X
 				</button>
 			</div>
+			<img
+				src={profilePic}
+				className={styles["profile-picture"]}
+				alt="searched person"
+			></img>
 			<p className={styles["person-job"]}>{profile.job}</p>
 			<p className={styles["person-office"]}>{profile.office}</p>
 			<ul className={styles["modal-interests"]}>
