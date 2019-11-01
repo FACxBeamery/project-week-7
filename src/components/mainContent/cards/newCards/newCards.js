@@ -57,6 +57,7 @@ const NewCardForm = ({
 						</label>
 						<input
 							type="text"
+							key="input new card"
 							name="newTopicTitle"
 							id="newTopicTitle"
 							value={newTopicTitle}
@@ -73,12 +74,14 @@ const NewCardForm = ({
 				) : (
 					<>
 						<label
+							key="label new card"
 							htmlFor="newPersonName"
 							className={styles["input-label"]}
 						>
 							Enter a name:
 						</label>
 						<input
+							key="input 2 new card"
 							type="text"
 							name="newPersonName"
 							id="newPersonName"
@@ -95,7 +98,11 @@ const NewCardForm = ({
 					</>
 				)}
 
-				<button type="submit" className={styles["new-card-submit"]}>
+				<button
+					key="button new card"
+					type="submit"
+					className={styles["new-card-submit"]}
+				>
 					Submit
 				</button>
 			</form>
