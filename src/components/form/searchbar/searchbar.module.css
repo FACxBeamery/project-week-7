@@ -6,6 +6,7 @@
 
 .searchbar-input {
 	margin-bottom: var(--s);
+	border: white solid 0.25rem;
 }
 
 .searchbar-label {
@@ -20,4 +21,13 @@
 	border: none;
 	border-radius: var(--xs);
 	cursor: pointer;
+}
+
+.searchbar-error {
+	border: red solid 0.125rem;
+}
+
+button:disabled,
+button[disabled] {
+	opacity: 50%;
 }
