@@ -112,6 +112,11 @@
 .modal-interests {
 	list-style: none;
 	text-align: left;
+	margin: 0;
+	margin-bottom: 2rem;
+	background-color: var(--beamery-light-grey);
+	width: 80%;
+	padding: var(--xs);
 }
 
 .person-name {
@@ -123,6 +128,8 @@
 .person-job {
 	font-style: italic;
 	text-align: left;
+	margin: 0;
+	padding: 0;
 }
 
 .interests-heading {
@@ -138,4 +145,22 @@
 .profile-picture {
 	border-radius: 50%;
 	width: 20vw;
+}
+
+.modal-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.close-button {
+	width: 2rem;
+	align-self: flex-end;
+	font-weight: 700;
+	font-size: 2rem;
+	padding: var(--xs);
+	margin: 0;
+	background: none;
+	border: none;
+	padding-bottom: 0;
 }
