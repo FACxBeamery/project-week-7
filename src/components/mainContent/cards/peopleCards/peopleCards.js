@@ -35,16 +35,17 @@ const PeopleCards = ({
 				<p className={styles["person-name"]} key={obj.name}>
 					{obj.name}
 				</p>
-				<p className={styles["person-job"]} key={obj.job}>
-					{obj.job}
-				</p>
 				<img
 					src={profilePic}
 					className={styles["profile-picture"]}
 					alt="person's profile"
 				></img>
-				<p className={styles["person-office"]} key={obj.office}>
-					{obj.office}
+				<p className={styles["person-job"]} key={obj.job}>
+					{obj.job}
+				</p>
+
+				<p className={styles["person-office"]} key={obj.location}>
+					{obj.location}
 				</p>
 			</div>
 		))

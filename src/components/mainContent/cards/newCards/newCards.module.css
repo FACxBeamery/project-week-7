@@ -1,6 +1,6 @@
 .card {
-	width: 10rem;
-	height: 10rem;
+	width: 12.5rem;
+	height: 12.5rem;
 	background-color: var(--beamery-light-grey);
 	border: none;
 	border-radius: 0.25rem;
@@ -35,4 +35,8 @@
 
 .title-input {
 	margin-bottom: var(--s);
+}
+
+.title-error {
+	border: red solid 0.125rem;
 }

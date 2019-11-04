@@ -17,31 +17,52 @@ const Searchbar = ({
 	setTopicData
 }) => {
 	const [searchbarText, setSearchbarText] = React.useState("");
+	const [errors, setErrors] = React.useState(undefined);
 
 	const handleSearchbarChange = (event) => {
 		event.persist();
 		setSearchbarText(event.target.value);
+		console.log("searchbar text", event.target.value);
+		if (event.target.value.length === 0) {
+			setErrors(true);
+		} else {
+			setErrors(false);
+		}
 	};
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		setTopic(searchbarText);
-		setSearchbarText("");
+		if (searchbarText) {
+			setTopic(searchbarText);
+			setSearchbarText("");
+		}
 	};
+
+	// React.useEffect(() => {
+	// 	console.log("current errors");
+	// 	console.log(errors);
+	// 	console.log(searchbarText.length);
+	// 	if (searchbarText.length > 0) {
+	// 		setErrors(false);
+	// 	} else {
+	// 		setErrors(true);
+	// 	}
+	// }, [searchbarText, errors, setErrors]);
+
 	React.useEffect(() => {
-		console.log(topic);
-		if (topic) {
+		if (!errors && topic) {
 			setPeopleData(getPeople(topic));
 			setCategory(getTopicCategory(topic));
 			setView("people");
 		}
-	}, [topic, setPeopleData, setCategory, setView]);
+	}, [errors, topic, setPeopleData, setCategory, setView]);
 
 	React.useEffect(() => {
 		if (category) {
 			setTopicData(getTopics(category));
 		}
 	}, [category, setTopicData]);
+
 	return (
 		<form onSubmit={handleSubmit} className={styles["searchbar-form"]}>
 			<label
@@ -54,11 +75,19 @@ const Searchbar = ({
 				name={`topicSearchbar`}
 				id="topicSearchbar"
 				onChange={handleSearchbarChange}
-				className={styles["searchbar-input"]}
+				className={`${styles["searchbar-input"]} ${
+					errors === true ? styles["searchbar-error"] : null
+				}`}
 			></input>
 
-			<button type="submit" className={styles["searchbar-submit"]}>
-				Search Topics
+
+			<button
+				type="submit"
+				className={styles["searchbar-submit"]}
+				disabled={errors === false ? false : true}
+			>
+				Search
+
 			</button>
 		</form>
 	);

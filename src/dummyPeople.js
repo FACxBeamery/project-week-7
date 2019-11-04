@@ -7,13 +7,15 @@ const initialDataPeople = [
 		topics: [
 			ObjectID("507f1f77bcf86cd799439011"),
 			ObjectID("54759eb3c090d83494e2d804")
-		]
+		],
+		location: "London"
 	},
 	{
 		_id: ObjectID("0123456789ab0123456789ab"),
 		name: "Martha Lambert",
 		job: "Graduate Software Engineer",
-		topics: [ObjectID("54759eb3c090d83494e2d804")]
+		topics: [ObjectID("54759eb3c090d83494e2d804")],
+		location: "London"
 	}
 ];
 module.exports = initialDataPeople;
