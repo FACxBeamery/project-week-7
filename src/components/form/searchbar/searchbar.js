@@ -80,12 +80,14 @@ const Searchbar = ({
 				}`}
 			></input>
 
+
 			<button
 				type="submit"
 				className={styles["searchbar-submit"]}
 				disabled={errors === false ? false : true}
 			>
 				Search
+
 			</button>
 		</form>
 	);

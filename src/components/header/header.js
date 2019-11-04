@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./header.module.css";
 import logo from "../../images/beamery.png";
 import Popup from "reactjs-popup";
-import stylesx from "../profileModal/profileModal.module.css";
+
 import profilePic from "../../images/profilePic.jpg";
 
 // import ProfileModal from "./../profileModal/profileModal";
@@ -50,6 +50,7 @@ const Header = ({ setPerson, setView, person }) => {
 						value={nameSearched}
 					></input>
 				</label>
+
 				<Popup
 					trigger={
 						<button
@@ -64,41 +65,29 @@ const Header = ({ setPerson, setView, person }) => {
 				>
 					{profile
 						? (close) => (
-								<div
-									className={`${stylesx["modal"]} ${
-										styles["modal-heading"]
-									}`}
-								>
+								<div>
 									{" "}
-									<a className="close" onClick={close}>
+									<button className="close" onClick={close}>
 										&times;
-									</a>
-									<p className={stylesx["person-name"]}>
+									</button>
+									<p className={styles["person-name"]}>
 										{profile.name}
 									</p>
-									{/* <button
-								className={stylesx["modal-close-button"]}
-								onClick={() => {
-									setPerson(null);
-								}}
-							>
-								X
-							</button> */}
 									<img
 										src={profilePic}
-										className={stylesx["profile-picture"]}
+										className={styles["profile-picture"]}
 										alt="searched person"
 									></img>
-									<p className={stylesx["person-job"]}>
+									<p className={styles["person-job"]}>
 										{profile.job}
 									</p>
-									<p className={stylesx["person-office"]}>
+									<p className={styles["person-office"]}>
 										{profile.office}
 									</p>
-									<ul className={stylesx["modal-interests"]}>
+									<ul className={styles["modal-interests"]}>
 										<h3
 											className={
-												stylesx["interests-heading"]
+												styles["interests-heading"]
 											}
 										>
 											Interests
