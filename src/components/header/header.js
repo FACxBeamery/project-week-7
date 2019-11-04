@@ -65,9 +65,12 @@ const Header = ({ setPerson, setView, person }) => {
 				>
 					{profile
 						? (close) => (
-								<div>
+								<div className={styles["modal-container"]}>
 									{" "}
-									<button className="close" onClick={close}>
+									<button
+										className={styles["close-button"]}
+										onClick={close}
+									>
 										&times;
 									</button>
 									<p className={styles["person-name"]}>
