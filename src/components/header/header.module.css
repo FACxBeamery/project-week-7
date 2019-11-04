@@ -79,3 +79,63 @@
 		padding-bottom: var(--s);
 	}
 }
+
+/* from w3 schools tutorial */
+.modal {
+	position: absolute;
+	left: 40vw;
+	display: block;
+	width: 50vw;
+	height: 50vh;
+	z-index: 2;
+	opacity: 0.95;
+	border-radius: 0.25rem;
+	border: #a2a2a2 solid 0.0625rem;
+	box-shadow: 0.5rem 0.5rem var(--beamery-blue);
+	background-color: var(--beamery-light-grey);
+	text-align: center;
+	color: var(--beamery-dark-grey);
+
+	padding: 1rem;
+}
+.modal-close-button {
+	font-size: var(--m);
+	color: var(--beamery-blue);
+	border: none;
+	border-radius: var(--xs);
+	margin-left: var(--s);
+	cursor: pointer;
+	background: none;
+	margin-left: auto;
+}
+
+.modal-interests {
+	list-style: none;
+	text-align: left;
+}
+
+.person-name {
+	font-weight: 700;
+	font-size: 1.25rem;
+	margin: 0;
+}
+
+.person-job {
+	font-style: italic;
+	text-align: left;
+}
+
+.interests-heading {
+	margin: 0;
+	margin-bottom: var(--m);
+}
+
+.modal-heading {
+	display: flex;
+	justify-content: center;
+}
+
+.profile-picture {
+	border-radius: 50%;
+	width: 20vw;
+}
