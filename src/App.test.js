@@ -64,7 +64,17 @@ describe(" main content rendering ", () => {
 		getByText("Martha Lambert");
 	});
 
-	test("Searchbar works as expected", () => {});
+	test("Searchbar works as expected", () => {
+		const { getByText, getByLabelText } = render(<App />);
+		const peopleTextInput = getByLabelText("Search for a person:");
+		const searchPeopleSubmit = getByText("Search");
+		fireEvent.change(peopleTextInput, {
+			target: { value: "Lyndsey Scott" }
+		});
+		fireEvent.click(searchPeopleSubmit);
+		getByText("Lyndsey Scott");
+	});
+
 	// test("clicking on topic goes to person view", () => {
 	// 	const { getByText, getByTestId } = render(
 	// 		<MainContent
