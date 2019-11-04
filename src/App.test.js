@@ -64,6 +64,7 @@ describe(" main content rendering ", () => {
 		getByText("Martha Lambert");
 	});
 
+	test("Searchbar works as expected", () => {});
 	// test("clicking on topic goes to person view", () => {
 	// 	const { getByText, getByTestId } = render(
 	// 		<MainContent
