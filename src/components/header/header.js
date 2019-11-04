@@ -50,6 +50,7 @@ const Header = ({ setPerson, setView, person }) => {
 						value={nameSearched}
 					></input>
 				</label>
+
 				<Popup
 					trigger={
 						<button
@@ -64,26 +65,14 @@ const Header = ({ setPerson, setView, person }) => {
 				>
 					{profile
 						? (close) => (
-								<div
-								// className={`${stylesx["modal"]} ${
-								// 	styles["modal-heading"]
-								// }`}
-								>
+								<div>
 									{" "}
-									<a className="close" onClick={close}>
+									<button className="close" onClick={close}>
 										&times;
-									</a>
+									</button>
 									<p className={styles["person-name"]}>
 										{profile.name}
 									</p>
-									{/* <button
-								className={stylesx["modal-close-button"]}
-								onClick={() => {
-									setPerson(null);
-								}}
-							>
-								X
-							</button> */}
 									<img
 										src={profilePic}
 										className={styles["profile-picture"]}

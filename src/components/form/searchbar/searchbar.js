@@ -58,7 +58,7 @@ const Searchbar = ({
 			></input>
 
 			<button type="submit" className={styles["searchbar-submit"]}>
-				Search
+				Search Topics
 			</button>
 		</form>
 	);
