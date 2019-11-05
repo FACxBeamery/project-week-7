@@ -5,10 +5,9 @@ import Popup from "reactjs-popup";
 
 import profilePic from "../../images/profilePic.jpg";
 
-// import ProfileModal from "./../profileModal/profileModal";
 import getProfile from "../../utils/get/getProfile";
 
-const ProfileModal = ({ profile, profilePic }) => {
+const ProfileModal = ({ profile }) => {
 	return (
 		<Popup
 			trigger={
@@ -58,52 +57,59 @@ const ProfileModal = ({ profile, profilePic }) => {
 		</Popup>
 	);
 };
-const Header = ({ setPerson, setView, person }) => {
-	const [profile, setProfile] = React.useState(null);
-	const [nameSearched, setNameSearched] = React.useState(null);
 
+const SearchProfileForm = ({ setPerson, ...props }) => {
+	const [nameSearched, setNameSearched] = React.useState(null);
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		setPerson(nameSearched);
 		setNameSearched("");
 	};
-	React.useEffect(() => {
-		setProfile(getProfile(person));
-	}, [person]);
+	return (
+		<form onSubmit={handleSubmit} className={styles["person-form"]}>
+			<label htmlFor="search-name" className={styles["input-label"]}>
+				<input
+					onChange={(e) => setNameSearched(e.target.value)}
+					className={styles["name-input"]}
+					id="search-name"
+					value={nameSearched}
+				></input>
+			</label>
+			{props.children}
+		</form>
+	);
+};
 
+const Header = ({ setPerson, setView, person }) => {
+	const [profile, setProfile] = React.useState(null);
 	const returnToHome = (e) => {
 		e.preventDefault();
 		setView("category");
 	};
 
+	React.useEffect(() => {
+		setProfile(getProfile(person));
+	}, [person, setProfile]);
+
+	const BeameryLogo = () => (
+		<img src={logo} alt="Beamery Logo" className={styles["logo"]} />
+	);
+
+	const LogoContainer = ({ ...props }) => (
+		<div className={styles["logo-title-container"]} onClick={returnToHome}>
+			{props.children}
+		</div>
+	);
+
 	return (
 		<header className={styles["header-container"]}>
-			<div
-				className={styles["logo-title-container"]}
-				onClick={returnToHome}
-			>
-				<img
-					src={logo}
-					alt="Beamery Logo"
-					className={styles["logo"]}
-				></img>
-
+			<LogoContainer>
+				<BeameryLogo />
 				<h1 className={styles["header-title"]}>Connect</h1>
-			</div>
-			<form onSubmit={handleSubmit} className={styles["person-form"]}>
-				<label htmlFor="search-name" className={styles["input-label"]}>
-					<input
-						onChange={(e) => setNameSearched(e.target.value)}
-						className={styles["name-input"]}
-						id="search-name"
-						value={nameSearched}
-					></input>
-				</label>
-				<ProfileModal
-					profile={profile}
-					profilePic={profilePic}
-				></ProfileModal>
-			</form>
+			</LogoContainer>
+			<SearchProfileForm setPerson={setPerson}>
+				<ProfileModal profile={profile}></ProfileModal>
+			</SearchProfileForm>
 		</header>
 	);
 };

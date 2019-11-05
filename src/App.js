@@ -7,7 +7,6 @@ import MainContent from "./components/mainContent/mainContent";
 import getCategories from "./utils/get/getCategories";
 import getLocations from "./utils/get/getLocations";
 
-import ProfileModal from "./components/profileModal/profileModal";
 import getProfile from "./utils/get/getProfile";
 
 const App = () => {
