@@ -99,10 +99,67 @@ const Header = ({ setPerson, setView, person }) => {
 						value={nameSearched}
 					></input>
 				</label>
+<<<<<<< HEAD:src/components/header/header.js
 				<ProfileModal
 					profile={profile}
 					profilePic={profilePic}
 				></ProfileModal>
+=======
+
+				<Popup
+					trigger={
+						<button
+							type="submit"
+							className={styles["submit-button"]}
+							id="submit-search-name"
+						>
+							Search
+						</button>
+					}
+					modal
+				>
+					{profile
+						? (close) => (
+								<div className={styles["modal-container"]}>
+									{" "}
+									<button
+										className={styles["close-button"]}
+										onClick={close}
+									>
+										&times;
+									</button>
+									<p className={styles["person-name"]}>
+										{profile.name}
+									</p>
+									<img
+										src={profilePic}
+										className={styles["profile-picture"]}
+										alt="searched person"
+									></img>
+									<p className={styles["person-job"]}>
+										{profile.job}
+									</p>
+									<p className={styles["person-office"]}>
+										{profile.office}
+									</p>
+									<ul className={styles["modal-interests"]}>
+										<h3
+											className={
+												styles["interests-heading"]
+											}
+										>
+											Interests
+										</h3>
+										<li>Eating Out</li>
+										<li>Saying That's Wild</li>
+									</ul>
+									{/* <p>{profile.topics}</p> */}
+									{/* also here we need to have the interests but after we have done some backend stuff to filter that */}
+								</div>
+						  )
+						: null}
+				</Popup>
+>>>>>>> 3c36ace70215ef54db26e19dd187985324ee2671:react-frontend/src/components/header/header.js
 			</form>
 		</header>
 	);
