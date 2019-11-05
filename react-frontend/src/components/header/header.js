@@ -23,9 +23,9 @@ const ProfileModal = ({ profile }) => {
 		>
 			{profile
 				? (close) => (
-						<div>
+						<div className={styles["modal-container"]}>
 							{" "}
-							<button className="close" onClick={close}>
+							<button className="close-button" onClick={close}>
 								&times;
 							</button>
 							<p className={styles["person-name"]}>
