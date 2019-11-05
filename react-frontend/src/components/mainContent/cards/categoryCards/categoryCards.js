@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./categoryCards.module.css";
 import capitalizeFirstLetter from "../../../../utils/capitalizeFirstLetter";
-import getTopics from "../../../../utils/get/getTopics";
+import filterTopics from "../../../../utils/filter/filterTopics";
 
 const CategoryCards = ({
 	allCategories,
@@ -19,7 +19,7 @@ const CategoryCards = ({
 	) => {
 		event.preventDefault();
 		setCategory(category);
-		setTopicData(getTopics(category));
+		setTopicData(filterTopics(category));
 		setView("topic");
 		setNewCardClicked(false);
 	};

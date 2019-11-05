@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./newCards.module.css";
-import addTopic from "../../../../utils/add/addTopic";
-import addPerson from "../../../../utils/add/addPerson";
+import addTopic from "../../../../utils/APIcalls/addTopic";
+import addPerson from "../../../../utils/APIcalls/addPerson";
 import Select from "../../../form/select/select";
 
 const NewCardButton = ({ setNewCardClicked }) => {
@@ -21,9 +21,8 @@ const NewCardForm = ({
 	newCardType,
 	locationsList,
 	categoriesList,
-	setTopicData,
-	setPeopleData,
-	category
+	category,
+	setNewItemAdded
 }) => {
 	const [newTopicTitle, setNewTopicTitle] = React.useState("");
 	//	const [newTopicCategory, setNewTopicCategory] = React.useState(null);
@@ -55,13 +54,11 @@ const NewCardForm = ({
 	};
 	const handleNewCardSubmit = () => {
 		if (newCardType === "topic") {
-			setTopicData(
-				addTopic({ topic: newTopicTitle, category: category })
-			);
+			addTopic({ topic: newTopicTitle, category: category });
+			setNewItemAdded(true);
 		} else if (newCardType === "person") {
-			setPeopleData(
-				addPerson({ name: newPersonName, location: newPersonLocation })
-			);
+			addPerson({ name: newPersonName, location: newPersonLocation });
+			setNewItemAdded(true);
 		}
 		setNewCardClicked(false);
 	};

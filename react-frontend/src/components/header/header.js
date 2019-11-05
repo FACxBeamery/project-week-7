@@ -5,7 +5,7 @@ import Popup from "reactjs-popup";
 
 import profilePic from "../../images/profilePic.jpg";
 
-import getProfile from "../../utils/get/getProfile";
+import getProfile from "../../utils/filter/getProfile";
 
 const ProfileModal = ({ profile }) => {
 	return (

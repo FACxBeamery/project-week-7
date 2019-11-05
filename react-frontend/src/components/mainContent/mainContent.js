@@ -4,20 +4,20 @@ import CategoryCards from "./cards/categoryCards/categoryCards";
 import TopicCards from "./cards/topicCards/topicCards";
 import PeopleCards from "./cards/peopleCards/peopleCards";
 import ContentHeader from "./contentHeader/contentHeader";
+import getPeople from "../../utils/filter/filterPeople";
 const MainContent = ({
 	view,
 	setView,
 	topic,
 	setTopic,
 	peopleData,
-	setPeopleData,
 	categoriesList,
 	locationsList,
 	location,
 	category,
 	setCategory,
 	topicData,
-	setTopicData
+	setNewItemAdded
 }) => {
 	const [newCardClicked, setNewCardClicked] = React.useState(false);
 	return (
@@ -51,19 +51,19 @@ const MainContent = ({
 						category={category}
 						newCardClicked={newCardClicked}
 						setNewCardClicked={setNewCardClicked}
-						setPeopleData={setPeopleData}
 						categoriesList={categoriesList}
 						location={location}
+						setNewItemAdded={setNewItemAdded}
 					></TopicCards>
 				</div>
 			) : (
 				<div key="people" className={styles["cards-container"]}>
 					<PeopleCards
-						allPeopleDB={peopleData}
+						allPeopleDB={getPeople(topic)}
 						newCardClicked={newCardClicked}
 						setNewCardClicked={setNewCardClicked}
 						locationsList={locationsList}
-						setPeopleData={setPeopleData}
+						setNewItemAdded={setNewItemAdded}
 					></PeopleCards>
 				</div>
 			)}

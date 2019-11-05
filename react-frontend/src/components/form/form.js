@@ -10,11 +10,9 @@ const Form = ({
 	location,
 	setLocation,
 	peopleData,
-	setPeopleData,
 	category,
 	setCategory,
-	topicData,
-	setTopicData
+	topicData
 }) => {
 	return (
 		<div className={styles["form"]}>
@@ -38,22 +36,12 @@ const Form = ({
 				topic={topic}
 				setTopic={setTopic}
 				peopleData={peopleData}
-				setPeopleData={setPeopleData}
 				category={category}
 				setCategory={setCategory}
 				topicData={topicData}
-				setTopicData={setTopicData}
 			></Searchbar>
 		</div>
 	);
 };
-
-//topic filters div
-// two dropdowns
-//topic searchbar
-
-// person filters button
-// on click disable topic form
-//
 
 export default Form;

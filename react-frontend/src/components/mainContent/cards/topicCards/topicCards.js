@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./topicCards.module.css";
 import capitalizeFirstLetter from "../../../../utils/capitalizeFirstLetter";
-import getPeople from "../../../../utils/get/getPeople";
+import getPeople from "../../../../utils/filter/filterPeople";
 import { NewCardForm, NewCardButton } from "../newCards/newCards";
 const TopicCards = ({
 	allTopicsDB,
@@ -10,15 +10,14 @@ const TopicCards = ({
 	category,
 	newCardClicked,
 	setNewCardClicked,
-	setPeopleData,
 	categoriesList,
 	setTopicData,
-	location
+	location,
+	setNewItemAdded
 }) => {
 	const handleTopicClick = (event, obj, setTopic, setView) => {
 		event.preventDefault();
 		setTopic(obj.topic);
-		setPeopleData(getPeople(obj.topic, location));
 		setView("people");
 		setNewCardClicked(false);
 	};
@@ -31,6 +30,7 @@ const TopicCards = ({
 				newCardType="topic"
 				key="form"
 				category={category}
+				setNewItemAdded={setNewItemAdded}
 			></NewCardForm>
 		) : (
 			<NewCardButton

@@ -1,20 +1,17 @@
 import React from "react";
 import styles from "./searchbar.module.css";
-import getPeople from "../../../utils/get/getPeople";
-import getTopics from "../../../utils/get/getTopics";
-import getTopicCategory from "../../../utils/get/getTopicCategory";
+import filterTopics from "../../../utils/filter/filterTopics";
+import getTopicCategory from "../../../utils/filter/getTopicCategory";
 
 const Searchbar = ({
 	view,
 	setView,
 	topic,
 	setTopic,
-	peopleData,
-	setPeopleData,
 	category,
 	setCategory,
-	topicData,
-	setTopicData
+	peopleData,
+	topicData
 }) => {
 	const [searchbarText, setSearchbarText] = React.useState("");
 	const [errors, setErrors] = React.useState(undefined);
@@ -40,17 +37,10 @@ const Searchbar = ({
 
 	React.useEffect(() => {
 		if (!errors && topic) {
-			setPeopleData(getPeople(topic));
-			setCategory(getTopicCategory(topic));
+			setCategory(getTopicCategory(topic, topicData));
 			setView("people");
 		}
-	}, [errors, topic, setPeopleData, setCategory, setView]);
-
-	React.useEffect(() => {
-		if (category) {
-			setTopicData(getTopics(category));
-		}
-	}, [category, setTopicData]);
+	}, [errors, topic, setCategory, setView]);
 
 	return (
 		<form onSubmit={handleSubmit} className={styles["searchbar-form"]}>

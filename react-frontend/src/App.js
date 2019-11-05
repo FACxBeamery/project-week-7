@@ -4,8 +4,12 @@ import Header from "./components/header/header";
 import Form from "./components/form/form";
 import MainContent from "./components/mainContent/mainContent";
 
-import getCategories from "./utils/get/getCategories";
-import getLocations from "./utils/get/getLocations";
+import getCategories from "./utils/filter/getCategories";
+import getLocations from "./utils/filter/getLocations";
+
+import getPeopleData from "./utils/APIcalls/getPeopleData";
+import getTopicData from "./utils/APIcalls/getTopicData";
+// import getTopicCategory from "./utils/filter/getTopicCategory";
 
 const App = () => {
 	const [view, setView] = React.useState("category");
@@ -14,9 +18,21 @@ const App = () => {
 	const [location, setLocation] = React.useState("All");
 	const [categoriesList] = React.useState(getCategories());
 	const [locationsList] = React.useState(getLocations());
-	const [peopleData, setPeopleData] = React.useState(null);
+
 	const [category, setCategory] = React.useState(null);
-	const [topicData, setTopicData] = React.useState(null);
+
+	const [peopleData, setPeopleData] = React.useState(getPeopleData());
+	const [topicData, setTopicData] = React.useState(getTopicData());
+
+	const [newItemAdded, setNewItemAdded] = React.useState(false);
+
+	React.useEffect(() => {
+		if (newItemAdded) {
+			setPeopleData(getPeopleData());
+			setTopicData(getTopicData());
+		}
+		setNewItemAdded(false);
+	}, [newItemAdded, setTopicData, setPeopleData]);
 
 	return (
 		<>
@@ -50,11 +66,10 @@ const App = () => {
 					categoriesList={categoriesList}
 					locationsList={locationsList}
 					peopleData={peopleData}
-					setPeopleData={setPeopleData}
 					category={category}
 					setCategory={setCategory}
 					topicData={topicData}
-					setTopicData={setTopicData}
+					setNewItemAdded={setNewItemAdded}
 				></MainContent>
 			</div>
 		</>
