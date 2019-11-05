@@ -10,7 +10,6 @@ const CategoryCards = ({
 	setTopicData,
 	setNewCardClicked
 }) => {
-	console.log(typeof setView);
 	const handleCategoryClick = (
 		event,
 		category,

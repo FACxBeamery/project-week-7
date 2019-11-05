@@ -34,8 +34,6 @@ const NewCardForm = ({
 		name: undefined
 	});
 
-	console.log("errors =", errors);
-
 	const handleTitleChange = (event) => {
 		event.persist();
 		setNewTopicTitle(event.target.value);

@@ -22,7 +22,7 @@ const Searchbar = ({
 	const handleSearchbarChange = (event) => {
 		event.persist();
 		setSearchbarText(event.target.value);
-		console.log("searchbar text", event.target.value);
+
 		if (event.target.value.length === 0) {
 			setErrors(true);
 		} else {
@@ -37,17 +37,6 @@ const Searchbar = ({
 			setSearchbarText("");
 		}
 	};
-
-	// React.useEffect(() => {
-	// 	console.log("current errors");
-	// 	console.log(errors);
-	// 	console.log(searchbarText.length);
-	// 	if (searchbarText.length > 0) {
-	// 		setErrors(false);
-	// 	} else {
-	// 		setErrors(true);
-	// 	}
-	// }, [searchbarText, errors, setErrors]);
 
 	React.useEffect(() => {
 		if (!errors && topic) {

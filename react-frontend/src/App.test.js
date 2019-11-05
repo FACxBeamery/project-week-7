@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import App from "./App";
 
 import { render, cleanup, fireEvent } from "@testing-library/react";
-import MainContent from "./components/mainContent/mainContent";
+
 import capitalizeFirstLetter from "../src/utils/capitalizeFirstLetter";
 
 it("renders without crashing", () => {
@@ -28,13 +28,13 @@ describe(" main content rendering ", () => {
 		topic = newTopic;
 	};
 	test("main content renders categories", () => {
-		const { getByText, getByLabelText } = render(<App />);
+		const { getByText } = render(<App />);
 		categoriesList.forEach((category) =>
 			getByText(capitalizeFirstLetter(category))
 		);
 	});
 	test("check clicking on category shows topic ", () => {
-		const { getByText, getByLabelText } = render(<App />);
+		const { getByText } = render(<App />);
 		const categoryButton = getByText("Frontend");
 		fireEvent.click(categoryButton);
 		getByText("Micro frontends");
