@@ -1,3 +1,8 @@
+![Software Architecture](https://github.com/FACxBeamery/project-week-7/blob/master/Software%20Architecture%20Whiteboard%20Martha%20%26%20Lyndsey.png)
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
