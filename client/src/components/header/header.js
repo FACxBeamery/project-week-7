@@ -2,12 +2,14 @@ import React from "react";
 import styles from "./header.module.css";
 import logo from "../../images/beamery.png";
 import Popup from "reactjs-popup";
+import capitalizeFirstLetter from "../../utils/capitalizeFirstLetter";
 
 import profilePic from "../../images/profilePic.jpg";
 
 import getProfile from "../../utils/filter/getProfile";
 
 const ProfileModal = ({ profile }) => {
+    console.log("profile ", profile);
     return (
         <Popup
             trigger={
@@ -21,41 +23,52 @@ const ProfileModal = ({ profile }) => {
             }
             modal
         >
-            {profile
-                ? (close) => (
-                      <div className={styles["modal-container"]}>
-                          {" "}
-                          <button className="close-button" onClick={close}>
-                              &times;
-                          </button>
-                          <p className={styles["person-name"]}>
-                              {profile[0].name}
-                          </p>
-                          <img
-                              src={profilePic}
-                              className={styles["profile-picture"]}
-                              alt="searched person"
-                          ></img>
-                          <p className={styles["person-job"]}>
-                              {profile[0].job}
-                          </p>
-                          <p className={styles["person-office"]}>
-                              {profile[0].office}
-                          </p>
-                          <ul className={styles["modal-interests"]}>
-                              <h3 className={styles["interests-heading"]}>
-                                  Interests
-                              </h3>
-                              {profile[1].map((topic) => (
-                                  <li>{topic}</li>
-                              ))}
-                          </ul>
-                          {/* <p>{profile.topics}</p> */}
-                          {/* also here we need to have the interests but after we have done some backend stuff to filter that */}
-                      </div>
-                  )
-                : null}
+            {(close) => (
+                <div className={styles["modal-container"]}>
+                    {" "}
+                    <button className={styles["close-button"]} onClick={close}>
+                        &times;
+                    </button>
+                    {profile ? (
+                        <ProfileInformation profile={profile} />
+                    ) : (
+                        <InvalidNameMessage />
+                    )}
+                </div>
+            )}
         </Popup>
+    );
+};
+
+const InvalidNameMessage = () => {
+    return (
+        <p className={styles["invalid-person-message"]}>
+            We can't find this person in our records! <br /> Please check your
+            spelling and try again.
+        </p>
+    );
+};
+const ProfileInformation = ({ profile }) => {
+    return (
+        <>
+            <p className={styles["person-name"]}>{profile[0].name}</p>
+            <img
+                src={profilePic}
+                className={styles["profile-picture"]}
+                alt="searched person"
+            ></img>
+            <p className={styles["person-job"]}>{profile[0].job}</p>
+            <p className={styles["person-office"]}>{profile[0].office}</p>
+            <ul className={styles["modal-interests"]}>
+                <h3 className={styles["interests-heading"]}>Interests:</h3>
+                {profile[1].length > 0
+                    ? profile[1].map((topic) => (
+                          <li>{capitalizeFirstLetter(topic)}</li>
+                      ))
+                    : "No topics of interest yet. Find a topic to add yourself!"}
+                {}
+            </ul>
+        </>
     );
 };
 const SearchProfileForm = ({ setPerson, ...props }) => {
