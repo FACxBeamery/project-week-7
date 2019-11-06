@@ -1,6 +1,6 @@
 
 // 
-const updateTopicsforPerson = (db, callback, topic, name) => {
+const updateTopicsForPerson = (db, topic, name, callback) => {
 
     const person = db.collection("people").find({ "name": name });
 
@@ -13,14 +13,11 @@ const updateTopicsforPerson = (db, callback, topic, name) => {
         db.collection("topics").updateOne({ "topic": topic }, { $push: { "people": personIdToAdd } }, callback);
 
     }
-    else {
 
-        //error handing
-    }
 
 };
 
 
 
 
-module.exports = updateTopicsforPerson;
+module.exports = updateTopicsForPerson;

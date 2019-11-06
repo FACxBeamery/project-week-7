@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express();
 const getPeople = require("./handlers/getPeople");
-const addPerson = require("./handlers/addPerson");
+const addPerson = require("./handlers/addTopictoPerson");
 const addTopic = require("./handlers/addTopic");
 const getTopics = require("./handlers/getTopics");
 
