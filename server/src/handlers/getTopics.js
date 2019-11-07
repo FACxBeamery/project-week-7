@@ -4,7 +4,6 @@ const getDB = require("../../db/dbConnect").getDB;
 
 
 
-
 const getTopics = (req, res) => {
     const db = getDB;
 

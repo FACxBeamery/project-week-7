@@ -1,6 +1,7 @@
+const Joi = require("joi");
 const updateTopicsForPerson = require("../../db/queries/updateTopicsForPerson");
 const getDB = require("../../db/dbConnect").getDB;
-const Joi = require("joi");
+
 
 const addTopicToPerson = (req, res) => {
 
@@ -14,20 +15,26 @@ const addTopicToPerson = (req, res) => {
         category: Joi.string()
             .min(3)
             .max(100),
-        people: Joi.array().items()
+        // people: Joi.array().items()
 
     });
-    const topicToAdd = {
+    const topicToAddToPerson = {
+        topic:,
+        category:
+
+
         //grab info from fields
 
     };
     const personToUpdate = {
+        name:
+
 
         // grab info from fields?
 
     };
 
-    schema.validate(topicToAdd, { abortEarly: false }).then(validatedTopic => {
+    schema.validate(topicToAddToPerson, { abortEarly: false }).then(validatedTopic => {
         const db = getDB();
         updateTopicsForPerson(db, validatedTopic, personToUpdate, (error, result) => {
             if (error) {
@@ -49,5 +56,5 @@ const addTopicToPerson = (req, res) => {
 
 };
 
-
+module.exports = addTopicToPerson;
 
