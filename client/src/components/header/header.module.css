@@ -7,6 +7,7 @@
     margin-top: var(--l);
     margin-bottom: var(--s);
     height: 3rem;
+    position: relative;
 }
 
 .logo-title-container {
@@ -35,10 +36,11 @@
     border-radius: var(--xs);
     margin-left: var(--s);
     cursor: pointer;
+    height: 1.25rem;
 }
 
 .name-input {
-    margin-left: var(--s);
+    width: 8.5rem;
 }
 
 .input-label {
@@ -48,6 +50,9 @@
 
 .person-form {
     display: flex;
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
 }
 
 @media only screen and (max-width: 800px) {
