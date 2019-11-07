@@ -9,6 +9,17 @@
     border: #a2a2a2 solid 0.0625rem;
 }
 
+.new-card-person {
+    width: 10.5rem;
+    height: 10.5rem;
+    background-color: var(--beamery-light-grey);
+    border: none;
+    border-radius: 0.25rem;
+    margin-right: var(--l);
+    margin-bottom: var(--l);
+    border: #a2a2a2 solid 0.0625rem;
+    padding: 1rem 1rem;
+}
 .new-card-button {
     font-size: 3rem;
     font-weight: 700;
@@ -16,16 +27,22 @@
 }
 
 .new-card-submit {
+    margin-top: auto;
+    /* margin-top: var(--s); */
     background-color: var(--beamery-blue);
     font-size: var(--m);
     color: white;
     border: none;
     border-radius: var(--xs);
     cursor: pointer;
+    width: 5rem;
 }
 
 .new-card-form {
-    padding: var(--m);
+    display: flex;
+    flex-direction: column;
+    /* height: 18rem; */
+    height: 100%;
 }
 
 .input-label {
@@ -34,7 +51,8 @@
 }
 
 .title-input {
-    margin-bottom: var(--s);
+    width: 8.5rem;
+    font-size: 0.875rem;
 }
 
 .title-error {
@@ -50,4 +68,9 @@
 
 .form-plus {
     margin: 0;
+}
+
+.no-suggestions {
+    color: #999;
+    padding: 0.5rem;
 }

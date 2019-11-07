@@ -5,6 +5,7 @@ import profilePic from "../../../../images/profilePic.jpg";
 
 const PeopleCards = ({
     allPeopleDB,
+    peopleData,
     newCardClicked,
     setNewCardClicked,
     locationsList,
@@ -18,6 +19,7 @@ const PeopleCards = ({
                 locationsList={locationsList}
                 key="people form"
                 setNewItemAdded={setNewItemAdded}
+                peopleData={peopleData}
             ></NewCardForm>
         ) : (
             <NewCardButton

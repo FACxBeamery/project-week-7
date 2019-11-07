@@ -23,6 +23,27 @@ const initialDataPeople = [
         job: "Graduate Software Engineer",
         topics: [],
         location: "London"
+    },
+    {
+        _id: ObjectID("3123456789ab0123456789ab"),
+        name: "Martha Flanbert",
+        job: "Graduate Software Engineer",
+        topics: [],
+        location: "London"
+    },
+    {
+        _id: ObjectID("4123456789ab0123456789ab"),
+        name: "Martha Camembert",
+        job: "Graduate Software Engineer",
+        topics: [],
+        location: "London"
+    },
+    {
+        _id: ObjectID("4123456789ab0123456789ab"),
+        name: "Martha Hambert",
+        job: "Graduate Software Engineer",
+        topics: [],
+        location: "London"
     }
 ];
 module.exports = initialDataPeople;
