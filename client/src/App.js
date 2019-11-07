@@ -21,17 +21,29 @@ const App = () => {
 
     const [category, setCategory] = React.useState(null);
 
-    const [peopleData, setPeopleData] = React.useState(getPeopleData());
-    const [topicData, setTopicData] = React.useState(getTopicData());
+    const [peopleData, setPeopleData] = React.useState(null);
+    const [topicData, setTopicData] = React.useState(null);
 
     const [newItemAdded, setNewItemAdded] = React.useState(false);
 
     React.useEffect(() => {
-        setPeopleData(getPeopleData());
+        const setData = () => {
+            getPeopleData().then((data) => {
+                setPeopleData(data);
+                setLocationsList(getLocations(data));
+            });
+        };
+        setData();
     }, []);
 
     React.useEffect(() => {
-        setTopicData(getTopicData());
+        const setData = () => {
+            getTopicData().then((data) => {
+                setTopicData(data);
+                setCategoriesList(getCategories(data));
+            });
+        };
+        setData();
     }, []);
 
     React.useEffect(() => {
@@ -42,17 +54,15 @@ const App = () => {
         setNewItemAdded(false);
     }, [newItemAdded, setTopicData, setPeopleData]);
 
-    React.useEffect(() => {
-        if (topicData) {
-            setCategoriesList(getCategories(topicData));
-        }
-    }, [topicData, setCategoriesList]);
+    // React.useEffect(() => {
+    //     setCategoriesList(getCategories(topicData));
+    // }, [topicData, setCategoriesList]);
 
-    React.useEffect(() => {
-        if (peopleData) {
-            setLocationsList(getLocations(peopleData));
-        }
-    }, [peopleData, setLocationsList]);
+    // React.useEffect(() => {
+    //     if (peopleData) {
+    //         setLocationsList(getLocations(peopleData));
+    //     }
+    // }, [peopleData, setLocationsList]);
 
     console.log("categoriesList in app", categoriesList);
     console.log("category in app", category);
@@ -66,37 +76,39 @@ const App = () => {
                 topicData={topicData}
             ></Header>
 
-            <div className={styles["main"]}>
-                <Form
-                    view={view}
-                    setView={setView}
-                    topic={topic}
-                    setTopic={setTopic}
-                    location={location}
-                    setLocation={setLocation}
-                    peopleData={peopleData}
-                    setPeopleData={setPeopleData}
-                    category={category}
-                    setCategory={setCategory}
-                    topicData={topicData}
-                    setTopicData={setTopicData}
-                ></Form>
+            {topicData && peopleData ? (
+                <div className={styles["main"]}>
+                    <Form
+                        view={view}
+                        setView={setView}
+                        topic={topic}
+                        setTopic={setTopic}
+                        location={location}
+                        setLocation={setLocation}
+                        peopleData={peopleData}
+                        setPeopleData={setPeopleData}
+                        category={category}
+                        setCategory={setCategory}
+                        topicData={topicData}
+                        setTopicData={setTopicData}
+                    ></Form>
 
-                <MainContent
-                    view={view}
-                    setView={setView}
-                    topic={topic}
-                    setTopic={setTopic}
-                    location={location}
-                    categoriesList={categoriesList}
-                    locationsList={locationsList}
-                    peopleData={peopleData}
-                    category={category}
-                    setCategory={setCategory}
-                    topicData={topicData}
-                    setNewItemAdded={setNewItemAdded}
-                ></MainContent>
-            </div>
+                    <MainContent
+                        view={view}
+                        setView={setView}
+                        topic={topic}
+                        setTopic={setTopic}
+                        location={location}
+                        categoriesList={categoriesList}
+                        locationsList={locationsList}
+                        peopleData={peopleData}
+                        category={category}
+                        setCategory={setCategory}
+                        topicData={topicData}
+                        setNewItemAdded={setNewItemAdded}
+                    ></MainContent>
+                </div>
+            ) : null}
         </>
     );
 };
