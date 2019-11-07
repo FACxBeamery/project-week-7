@@ -2,20 +2,18 @@ const readTopics = require("../../db/queries/readTopics");
 
 const getDB = require("../../db/dbConnect").getDB;
 
+const getTopics = async (req, res) => {
+    console.log(req);
 
-
-const getTopics = (req, res) => {
+    console.log("getting topics!");
     try {
-        const db = getDB;
-        readTopics(db);
+        const db = getDB();
+        const topicsCollection = await readTopics(db);
+        res.send(topicsCollection);
         res.status(200);
-    }
-
-    catch (err) {
+    } catch (err) {
         res.status(404).send(err);
-
     }
 };
-
 
 module.exports = getTopics;

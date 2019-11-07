@@ -27,6 +27,14 @@ const App = () => {
     const [newItemAdded, setNewItemAdded] = React.useState(false);
 
     React.useEffect(() => {
+        setPeopleData(getPeopleData());
+    }, []);
+
+    React.useEffect(() => {
+        setTopicData(getTopicData());
+    }, []);
+
+    React.useEffect(() => {
         if (newItemAdded) {
             setPeopleData(getPeopleData());
             setTopicData(getTopicData());
@@ -35,11 +43,15 @@ const App = () => {
     }, [newItemAdded, setTopicData, setPeopleData]);
 
     React.useEffect(() => {
-        setCategoriesList(getCategories(topicData));
+        if (topicData) {
+            setCategoriesList(getCategories(topicData));
+        }
     }, [topicData, setCategoriesList]);
 
     React.useEffect(() => {
-        setLocationsList(getLocations(peopleData));
+        if (peopleData) {
+            setLocationsList(getLocations(peopleData));
+        }
     }, [peopleData, setLocationsList]);
 
     console.log("categoriesList in app", categoriesList);

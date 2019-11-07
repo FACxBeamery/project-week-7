@@ -1,9 +1,9 @@
-
 const readTopics = async (db) => {
-
-    await db.collection("topics").find().toArray();
-
-
+    const topicsCollection = await db
+        .collection("topics")
+        .find()
+        .toArray();
+    return topicsCollection;
 };
 
 module.exports = readTopics;
