@@ -1,7 +1,11 @@
 
 
-const readPeople = (db, callback) => {
-    db.collection("people").find().toArray(callback);
+const readPeople = async (db) => {
+
+    await db.collection("people").find().toArray();
+
+
+
 };
 
 module.exports = readPeople;

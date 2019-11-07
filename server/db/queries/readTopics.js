@@ -1,6 +1,9 @@
 
-const readTopics = (db, callback) => {
-    db.collection("topics").find().toArray(callback);
+const readTopics = async (db) => {
+
+    await db.collection("topics").find().toArray();
+
+
 };
 
 module.exports = readTopics;

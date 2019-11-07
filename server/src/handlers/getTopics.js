@@ -5,15 +5,16 @@ const getDB = require("../../db/dbConnect").getDB;
 
 
 const getTopics = (req, res) => {
-    const db = getDB;
+    try {
+        const db = getDB;
+        readTopics(db);
+        res.status(200);
+    }
 
-    readTopics(db, (error, result) => {
-        if (error) {
-            throw error;
-        }
+    catch (err) {
+        res.status(404).send(err);
 
-        return res.status(200).send(result);
-    });
+    }
 };
 
 

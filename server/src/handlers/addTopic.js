@@ -27,22 +27,19 @@ const addTopic = (req, res) => {
 
 
     schema.validate(topicToAdd, { abortEarly: false }).then(validatedTopic => {
-        const db = getDB();
-        createTopic(validatedTopic, (error, result) => {
-            if (error) {
-                throw error;
-            }
-
-            return res.status(200).send(result);
-        })
-
-
-
-
-    }).catch(error => {
-        res.status(400).send(error);
-        res.status(400).send("Validation failed.");
-    });
+        try { //try/catch for query fail
+            const db = getDB();
+            createTopic(db, validatedTopic)
+            res.status(201);
+        }
+        catch (err) {
+            res.status(400).send(err);
+        }
+    }) // catch for validation fail
+        .catch(error => {
+            res.status(400).send(error);
+            res.status(400).send("Validation failed.");
+        });
 
 
 

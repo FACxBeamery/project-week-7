@@ -1,8 +1,9 @@
 
-const createTopic = (newTopic, db) => {
+const createTopic = async (db, newTopic) => {
 
 
-    db.collection("topics").insertOne(newTopic);
+    await db.collection("topics").insertOne(newTopic);
+
 
 };
 

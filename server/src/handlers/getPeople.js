@@ -4,16 +4,18 @@ const readPeople = require("../../db/queries/readPeople");
 const getDB = require("../../db/dbConnect").getDB;
 
 const getPeople = (req, res) => {
-    const db = getDB();
+    try {
+        const db = getDB();
+        readPeople(db);
+        res.status(200);
+    }
 
-    readPeople(db, (error, result) => {
-        if (error) {
-            throw error;
-        }
 
-        return res.status(200).send(result);
-    });
+    catch (err) {
+        res.status(404).send(err);
+    }
 };
+
 
 
 module.exports = getPeople;

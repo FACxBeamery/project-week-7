@@ -35,17 +35,14 @@ const addTopicToPerson = (req, res) => {
     };
 
     schema.validate(topicToAddToPerson, { abortEarly: false }).then(validatedTopic => {
-        const db = getDB();
-        updateTopicsForPerson(db, validatedTopic, personToUpdate, (error, result) => {
-            if (error) {
-                throw error;
-            }
-
-            return res.status(200).send(result);
+        try {
+            const db = getDB();
+            updateTopicsForPerson(db, validatedTopic, personToUpdate);
+            res.status(201);
         }
-
-
-        );
+        catch {
+            res.status(400).send(err);
+        }
     }).catch(error => {
         res.status(400).send(error);
         res.status(400).send("Validation failed.");
