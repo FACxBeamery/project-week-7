@@ -1,11 +1,9 @@
-
-
 const readPeople = async (db) => {
-
-    await db.collection("people").find().toArray();
-
-
-
+    const peopleCollection = await db
+        .collection("people")
+        .find()
+        .toArray();
+    return peopleCollection;
 };
 
 module.exports = readPeople;

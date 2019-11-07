@@ -1,4 +1,5 @@
 const getCategories = (topicData) => {
+    console.log(topicData);
     const categoriesList = [];
     topicData.map((topic) => {
         if (!categoriesList.includes(topic.category)) {

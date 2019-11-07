@@ -3,7 +3,7 @@ import axios from "axios";
 
 const getPeopleData = async () => {
     let res = await axios.get("/people");
-    let { peopleData } = res.data;
+    let peopleData = res.data;
     return peopleData;
 };
 
