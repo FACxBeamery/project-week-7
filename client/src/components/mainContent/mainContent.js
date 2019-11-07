@@ -66,6 +66,7 @@ const MainContent = ({
                             topicData,
                             peopleData
                         )}
+                        peopleData={peopleData}
                         newCardClicked={newCardClicked}
                         setNewCardClicked={setNewCardClicked}
                         locationsList={locationsList}

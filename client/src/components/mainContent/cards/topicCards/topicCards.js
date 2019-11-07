@@ -35,6 +35,7 @@ const TopicCards = ({
         ) : (
             <NewCardButton
                 setNewCardClicked={setNewCardClicked}
+                newCardType="topic"
                 key="button"
             ></NewCardButton>
         ),

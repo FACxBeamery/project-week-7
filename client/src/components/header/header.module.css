@@ -1,166 +1,177 @@
 .header-container {
-	background-color: #fafcff;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 1rem;
-	margin-top: var(--l);
-	margin-bottom: var(--s);
+    background-color: #fafcff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    margin-top: var(--l);
+    margin-bottom: var(--s);
+    height: 3rem;
+    position: relative;
 }
 
 .logo-title-container {
-	display: flex;
-	cursor: pointer;
+    display: flex;
+    cursor: pointer;
 }
 
 .header-title {
-	font-weight: 700;
-	font-style: italic;
-	font-size: 2.25rem;
-	padding: var(--xs) 0 0 var(--s);
-	margin: 0;
-	color: var(--beamery-blue);
+    font-weight: 700;
+    font-style: italic;
+    font-size: 2.25rem;
+    padding: var(--xs) 0 0 var(--s);
+    margin: 0;
+    color: var(--beamery-blue);
 }
 
 .logo {
-	height: 6vh;
+    height: 6vh;
 }
 
 .submit-button {
-	background-color: var(--beamery-blue);
-	font-size: var(--m);
-	color: white;
-	border: none;
-	border-radius: var(--xs);
-	margin-left: var(--s);
-	cursor: pointer;
+    background-color: var(--beamery-blue);
+    font-size: var(--m);
+    color: white;
+    border: none;
+    border-radius: var(--xs);
+    margin-left: var(--s);
+    cursor: pointer;
+    height: 1.25rem;
 }
 
 .name-input {
-	margin-left: var(--s);
+    width: 8.5rem;
 }
 
 .input-label {
-	font-style: italic;
-	display: flex;
+    font-style: italic;
+    display: flex;
 }
 
 .person-form {
-	display: flex;
+    display: flex;
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
 }
 
 @media only screen and (max-width: 800px) {
-	.header-container {
-		flex-direction: column;
-		padding: var(--s);
-	}
+    .header-container {
+        flex-direction: column;
+        padding: var(--s);
+    }
 
-	.logo-title-container {
-		padding-bottom: var(--s);
-	}
+    .logo-title-container {
+        padding-bottom: var(--s);
+    }
 
-	.person-form {
-		padding-bottom: var(--l);
-	}
+    .person-form {
+        padding-bottom: var(--l);
+    }
 }
 
 @media only screen and (max-width: 450px) {
-	.person-form {
-		flex-direction: column;
-		align-items: center;
-	}
+    .person-form {
+        flex-direction: column;
+        align-items: center;
+    }
 
-	.input-label {
-		flex-direction: column;
-		padding-bottom: var(--s);
-	}
+    .input-label {
+        flex-direction: column;
+        padding-bottom: var(--s);
+    }
 
-	.name-input {
-		padding-bottom: var(--s);
-	}
+    .name-input {
+        padding-bottom: var(--s);
+    }
 }
 
 /* from w3 schools tutorial */
 .modal {
-	position: absolute;
-	left: 40vw;
-	display: block;
-	width: 50vw;
-	height: 50vh;
-	z-index: 2;
-	opacity: 0.95;
-	border-radius: 0.25rem;
-	border: #a2a2a2 solid 0.0625rem;
-	box-shadow: 0.5rem 0.5rem var(--beamery-blue);
-	background-color: var(--beamery-light-grey);
-	text-align: center;
-	color: var(--beamery-dark-grey);
+    position: absolute;
+    left: 40vw;
+    display: block;
+    width: 50vw;
+    height: 50vh;
+    z-index: 2;
+    opacity: 0.95;
+    border-radius: 0.25rem;
+    border: #a2a2a2 solid 0.0625rem;
+    box-shadow: 0.5rem 0.5rem var(--beamery-blue);
+    background-color: var(--beamery-light-grey);
+    text-align: center;
+    color: var(--beamery-dark-grey);
 
-	padding: 1rem;
+    padding: 1rem;
 }
 .modal-close-button {
-	font-size: var(--m);
-	color: var(--beamery-blue);
-	border: none;
-	border-radius: var(--xs);
-	margin-left: var(--s);
-	cursor: pointer;
-	background: none;
-	margin-left: auto;
+    font-size: var(--m);
+    color: var(--beamery-blue);
+    border: none;
+    border-radius: var(--xs);
+    margin-left: var(--s);
+    cursor: pointer;
+    background: none;
+    margin-left: auto;
 }
 
 .modal-interests {
-	list-style: none;
-	text-align: left;
-	margin: 0;
-	margin-bottom: 2rem;
-	background-color: var(--beamery-light-grey);
-	width: 80%;
-	padding: var(--xs);
+    list-style: none;
+    text-align: left;
+    margin: 0;
+    margin-bottom: 2rem;
+    background-color: var(--beamery-light-grey);
+    width: 80%;
+    padding: var(--xs);
 }
 
 .person-name {
-	font-weight: 700;
-	font-size: 1.25rem;
-	margin: 0;
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin: 0;
 }
 
 .person-job {
-	font-style: italic;
-	text-align: left;
-	margin: 0;
-	padding: 0;
+    font-style: italic;
+    text-align: left;
+    margin: 0;
+    padding: 0;
 }
 
 .interests-heading {
-	margin: 0;
-	margin-bottom: var(--m);
+    margin: 0;
+    margin-bottom: var(--m);
 }
 
 .modal-heading {
-	display: flex;
-	justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 .profile-picture {
-	border-radius: 50%;
-	width: 20vw;
+    border-radius: 50%;
+    width: 20vw;
 }
 
 .modal-container {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .close-button {
-	width: 2rem;
-	align-self: flex-end;
-	font-weight: 700;
-	font-size: 2rem;
-	padding: var(--xs);
-	margin: 0;
-	background: none;
-	border: none;
-	padding-bottom: 0;
+    width: 2rem;
+    align-self: flex-end;
+    font-weight: 700;
+    font-size: 2rem;
+    padding: var(--xs);
+    margin: 0;
+    background: none;
+    border: none;
+    padding-bottom: 0;
+}
+
+.input-suggestions-container {
+    display: flex;
+    flex-direction: column;
 }
