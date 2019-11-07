@@ -1,11 +1,9 @@
-import dummyData from "../../dummyTopics";
-const ObjectID = require("mongodb").ObjectID;
-const addTopic = (newTopic) => {
-	return dummyData.concat({
-		_id: ObjectID("407f1f77bcf86cd799439012"),
-		people: [],
-		...newTopic
-	});
-};
+import axios from "axios";
 
+const addTopic = async (newTopic) => {
+	let res = await axios.post("/topics", {
+		newTopic
+	})
+	// check if successful
+}
 export default addTopic;

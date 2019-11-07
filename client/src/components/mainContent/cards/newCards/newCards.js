@@ -19,10 +19,10 @@ const NewCardButton = ({ setNewCardClicked, newCardType }) => {
                         Add a new topic!
                     </h3>
                 ) : (
-                    <h3 className={styles["form-header"]}>
-                        Interested in this topic?
+                        <h3 className={styles["form-header"]}>
+                            Interested in this topic?
                     </h3>
-                )}
+                    )}
                 <p className={styles["form-plus"]}> + </p>
             </button>
         </>
@@ -110,8 +110,7 @@ const NewCardForm = ({
     const handleNewCardSubmit = (e) => {
         e.preventDefault();
         if (newCardType === "topic") {
-            addTopic({ topic: newTopicTitle, category: category });
-            setNewItemAdded(true);
+            addTopic({ topic: newTopicTitle, category: category }).then(() => setNewItemAdded(true));
         } else if (newCardType === "person") {
             if (e.keyCode === 13) {
                 e.preventDefault();
@@ -147,7 +146,7 @@ const NewCardForm = ({
                                 errors.title === true
                                     ? styles["title-error"]
                                     : null
-                            }`}
+                                }`}
                         ></input>
                         {/* <Select
 							//category={newTopicCategory}
@@ -157,48 +156,48 @@ const NewCardForm = ({
 						></Select>{" "} */}
                     </>
                 ) : (
-                    <>
-                        <label
-                            htmlFor="newPersonName"
-                            className={styles["input-label"]}
-                        >
-                            Enter your name:
+                        <>
+                            <label
+                                htmlFor="newPersonName"
+                                className={styles["input-label"]}
+                            >
+                                Enter your name:
                         </label>
-                        <input
-                            type="text"
-                            name="newPersonName"
-                            id="newPersonName"
-                            value={newPersonName}
-                            autoComplete="off"
-                            onChange={(e) => handleNameChange(e, peopleData)}
-                            onKeyDown={(e) =>
-                                handleSuggestionKeyDown(e, showSuggestions)
-                            }
-                            className={`${styles["title-input"]} ${
-                                errors.name === true
-                                    ? styles["title-error"]
-                                    : null
-                            }`}
-                        ></input>
-                        {showSuggestions ? (
-                            <SuggestionsList
-                                filteredSuggestions={filteredSuggestions}
-                                activeSuggestion={activeSuggestion}
-                                setActiveSuggestion={setActiveSuggestion}
-                                setFilteredSuggestions={setFilteredSuggestions}
-                                setShowSuggestions={setShowSuggestions}
-                                setNewPersonName={setNewPersonName}
-                            />
-                        ) : null}
-                        {/* <Select
+                            <input
+                                type="text"
+                                name="newPersonName"
+                                id="newPersonName"
+                                value={newPersonName}
+                                autoComplete="off"
+                                onChange={(e) => handleNameChange(e, peopleData)}
+                                onKeyDown={(e) =>
+                                    handleSuggestionKeyDown(e, showSuggestions)
+                                }
+                                className={`${styles["title-input"]} ${
+                                    errors.name === true
+                                        ? styles["title-error"]
+                                        : null
+                                    }`}
+                            ></input>
+                            {showSuggestions ? (
+                                <SuggestionsList
+                                    filteredSuggestions={filteredSuggestions}
+                                    activeSuggestion={activeSuggestion}
+                                    setActiveSuggestion={setActiveSuggestion}
+                                    setFilteredSuggestions={setFilteredSuggestions}
+                                    setShowSuggestions={setShowSuggestions}
+                                    setNewPersonName={setNewPersonName}
+                                />
+                            ) : null}
+                            {/* <Select
 							location={newPersonLocation}
 							setLocation={setNewPersonLocation}
 							valueName="location"
 							locationsList={locationsList}
 							className={styles["select-input"]}
 						></Select> */}
-                    </>
-                )}
+                        </>
+                    )}
 
                 <button
                     type="submit"
@@ -209,8 +208,8 @@ const NewCardForm = ({
                                 ? null
                                 : true
                             : errors.name === false
-                            ? null
-                            : true
+                                ? null
+                                : true
                     }
                 >
                     Submit
