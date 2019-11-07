@@ -9,11 +9,8 @@ let _client;
 let dbURL;
 
 
-if (process.env.NODE_ENV === "test") {
-    dbURL = process.env.DATABASE_URL_TEST;
-} else {
-    dbURL = process.env.DATABASE_URL;
-}
+
+dbURL = process.env.MONGO_URI;
 
 
 const dbConfig = { useNewUrlParser: true, useUnifiedTopology: true };

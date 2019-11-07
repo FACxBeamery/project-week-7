@@ -18,18 +18,18 @@ const addTopic = (req, res) => {
 
     });
     const topicToAdd = {
-        topic:,
-        category:
+        topic: req.fields.topic,
+        category: req.fields.category,
+        people: []
+        //grab info from fields
 
-    //grab info from fields
-
-};
+    };
 
 
     schema.validate(topicToAdd, { abortEarly: false }).then(validatedTopic => {
         try { //try/catch for query fail
             const db = getDB();
-            createTopic(db, validatedTopic)
+            createTopic(db, validatedTopic);
             res.status(201);
         }
         catch (err) {
