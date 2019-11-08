@@ -15,7 +15,7 @@ const addTopicToPerson = (req, res) => {
         updateTopicsForPerson(db, topicToAddToPerson, personToUpdate);
         res.status(201).send("added successfully!");
     } catch (err) {
-        res.status(400).send(err);
+        res.status(404).send(err);
     }
 };
 

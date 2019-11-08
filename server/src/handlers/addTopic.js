@@ -33,7 +33,7 @@ const addTopic = (req, res) => {
         res.status(201).send("added successfully");
     } catch (err) {
         console.log("errror number 1 ADSDKSAJS");
-        res.status(400).send(err);
+        res.status(404).send(err);
     }
 };
 // ) // catch for validation fail
