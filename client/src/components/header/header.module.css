@@ -46,6 +46,7 @@
 .input-label {
     font-style: italic;
     display: flex;
+    padding-right: var(--s);
 }
 
 .person-form {

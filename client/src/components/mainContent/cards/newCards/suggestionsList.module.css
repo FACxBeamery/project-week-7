@@ -12,11 +12,12 @@
 
 .suggestions li {
     padding: 0.125rem;
+    background: white;
 }
 
 .suggestion-active,
 .suggestions li:hover {
-    background-color: var(--beamery-blue);
+    background: var(--beamery-blue) !important ;
     color: white;
     cursor: pointer;
 }
