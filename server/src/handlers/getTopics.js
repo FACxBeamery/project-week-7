@@ -3,9 +3,6 @@ const readTopics = require("../../db/queries/readTopics");
 const getDB = require("../../db/dbConnect").getDB;
 
 const getTopics = async (req, res) => {
-    console.log(req);
-
-    console.log("getting topics!");
     try {
         const db = getDB();
         const topicsCollection = await readTopics(db);

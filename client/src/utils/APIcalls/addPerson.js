@@ -1,11 +1,11 @@
-import dummyData from "../../dummyTopics";
-const ObjectID = require("mongodb").ObjectID;
-const addPerson = (newPerson, newTopic) => {
-	return dummyData.concat({
-		_id: ObjectID("407f1f77bcf86cd799439012"),
-		people: [],
-		...newTopic
-	});
+import axios from "axios";
+
+const addPerson = async (personToAddTo, TopicToAdd) => {
+    console.log("TRYING TO ADD A PER`son");
+    let res = await axios.patch("/people", {
+        person: personToAddTo,
+        topic: TopicToAdd
+    });
 };
 
 export default addPerson;

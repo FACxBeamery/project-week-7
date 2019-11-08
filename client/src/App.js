@@ -48,24 +48,14 @@ const App = () => {
 
     React.useEffect(() => {
         if (newItemAdded) {
-            setPeopleData(getPeopleData());
-            setTopicData(getTopicData());
+            getTopicData().then((data) => {
+                setTopicData(data);
+            });
+            getPeopleData().then((data) => setPeopleData(data));
         }
         setNewItemAdded(false);
     }, [newItemAdded, setTopicData, setPeopleData]);
 
-    // React.useEffect(() => {
-    //     setCategoriesList(getCategories(topicData));
-    // }, [topicData, setCategoriesList]);
-
-    // React.useEffect(() => {
-    //     if (peopleData) {
-    //         setLocationsList(getLocations(peopleData));
-    //     }
-    // }, [peopleData, setLocationsList]);
-
-    console.log("categoriesList in app", categoriesList);
-    console.log("category in app", category);
     return (
         <>
             <Header
@@ -76,7 +66,9 @@ const App = () => {
                 topicData={topicData}
             ></Header>
 
-            {topicData && peopleData ? (
+            {topicData &&
+            typeof topicData.then !== "function" &&
+            (peopleData && typeof peopleData.then !== "function") ? (
                 <div className={styles["main"]}>
                     <Form
                         view={view}

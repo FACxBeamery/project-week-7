@@ -8,7 +8,7 @@ const port = process.env.PORT || 4000;
 const app = express();
 // const mongoURI = process.env.MONGO_URI || "mongodb://localhost:27017";
 
-// app.use(bodyParser);
+app.use(bodyParser.json());
 
 app.use(router);
 

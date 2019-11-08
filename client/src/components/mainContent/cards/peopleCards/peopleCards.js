@@ -9,7 +9,8 @@ const PeopleCards = ({
     newCardClicked,
     setNewCardClicked,
     locationsList,
-    setNewItemAdded
+    setNewItemAdded,
+    topic
 }) => {
     return [
         newCardClicked ? (
@@ -20,6 +21,7 @@ const PeopleCards = ({
                 key="people form"
                 setNewItemAdded={setNewItemAdded}
                 peopleData={peopleData}
+                topic={topic}
             ></NewCardForm>
         ) : (
             <NewCardButton

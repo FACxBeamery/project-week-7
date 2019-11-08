@@ -16,6 +16,11 @@ const populateDB = (db) => {
     db.collection("people").insertMany(dummyPeople);
     db.collection("topics").insertMany(dummyTopics);
 };
+
+const deleteDB = (db) => {
+    db.collection("people").deleteMany({});
+    db.collection("topics").deleteMany({});
+};
 const initDB = () => {
     return new Promise((resolve, reject) => {
         const connected = (err, client) => {
@@ -25,7 +30,7 @@ const initDB = () => {
                 console.log("Initilising the database");
                 _client = client;
                 _db = client.db("beameryconnect");
-
+                deleteDB(_db);
                 populateDB(_db);
                 resolve(_db);
             }

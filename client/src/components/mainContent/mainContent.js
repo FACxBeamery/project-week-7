@@ -71,6 +71,7 @@ const MainContent = ({
                         setNewCardClicked={setNewCardClicked}
                         locationsList={locationsList}
                         setNewItemAdded={setNewItemAdded}
+                        topic={topic}
                     ></PeopleCards>
                 </div>
             )}
