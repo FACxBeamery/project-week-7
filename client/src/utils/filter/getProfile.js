@@ -6,7 +6,7 @@ const getProfile = (name, peopleData, topicData) => {
 
     if (personObj) {
         const topicsArray = personObj["topics"].map(
-            (id) => topicData.find((topic) => topic._id.equals(id)).topic
+            (id) => topicData.find((topic) => topic._id === id).topic
         );
 
         return [personObj, topicsArray];
