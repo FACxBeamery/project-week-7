@@ -8,6 +8,11 @@ let _db;
 let _client;
 let dbURL;
 
+// if (process.env.NODE_ENV === "test") {
+//     dbURL = process.env.MONGO_URI_TEST;
+// } else {
+//     dbURL = process.env.MONGO_URI;
+// }
 dbURL = process.env.MONGO_URI;
 
 const dbConfig = { useNewUrlParser: true, useUnifiedTopology: true };
@@ -30,8 +35,8 @@ const initDB = () => {
                 console.log("Initilising the database");
                 _client = client;
                 _db = client.db("beameryconnect");
-                deleteDB(_db);
-                populateDB(_db);
+                // deleteDB(_db);
+                // populateDB(_db);
                 resolve(_db);
             }
         };

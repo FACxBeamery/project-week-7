@@ -2,9 +2,9 @@
     "name": "server",
     "version": "1.0.0",
     "description": "",
-    "main": "src/server.js",
+    "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
+        "test": "test",
         "start": "nodemon app.js"
     },
     "author": "",
@@ -17,6 +17,16 @@
         "express": "^4.17.1",
         "joi": "^14.3.1",
         "mongodb": "^3.3.3",
-        "nodemon": "^1.19.4"
+        "nodemon": "^1.19.4",
+        "tap-spec": "^5.0.0",
+        "tape": "^4.11.0"
+    },
+    "devDependencies": {
+        "babel-cli": "^6.26.0",
+        "babel-preset-env": "^1.7.0",
+        "jest": "^24.9.0",
+        "@testing-library/jest-dom": "^4.2.0",
+        "superagent": "^5.1.0",
+        "supertest": "^4.0.2"
     }
 }

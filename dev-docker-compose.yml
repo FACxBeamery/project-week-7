@@ -28,7 +28,7 @@ services:
             - ./server:/app/server
         # Run command
         # Nodemon for hot reloading (-L flag required for polling in Docker)
-        command: nodemon -L src/server.js
+        command: nodemon -L index.js
         # Connect to other containers
         links:
             - db

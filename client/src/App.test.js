@@ -7,90 +7,90 @@ import { render, cleanup, fireEvent } from "@testing-library/react";
 import capitalizeFirstLetter from "../src/utils/capitalizeFirstLetter";
 
 it("renders without crashing", () => {
-	const div = document.createElement("div");
-	ReactDOM.render(<App />, div);
-	ReactDOM.unmountComponentAtNode(div);
+    const div = document.createElement("div");
+    ReactDOM.render(<App />, div);
+    ReactDOM.unmountComponentAtNode(div);
 });
 afterEach(cleanup);
 
 //stops event listeners after test
 
 describe(" main content rendering ", () => {
-	const categoriesList = [
-		"frontend",
-		"backend",
-		"people",
-		"marketing",
-		"non-work"
-	];
-	let topic = null;
-	const setTopic = (newTopic) => {
-		topic = newTopic;
-	};
-	test("main content renders categories", () => {
-		const { getByText } = render(<App />);
-		categoriesList.forEach((category) =>
-			getByText(capitalizeFirstLetter(category))
-		);
-	});
-	test("check clicking on category shows topic ", () => {
-		const { getByText } = render(<App />);
-		const categoryButton = getByText("Frontend");
-		fireEvent.click(categoryButton);
-		getByText("Micro frontends");
-		getByText("React");
-	});
+    const categoriesList = [
+        "frontend",
+        "backend",
+        "people",
+        "marketing",
+        "non-work"
+    ];
+    let topic = null;
+    const setTopic = (newTopic) => {
+        topic = newTopic;
+    };
+    test("main content renders categories", () => {
+        const { getByText } = render(<App />);
+        categoriesList.forEach((category) =>
+            getByText(capitalizeFirstLetter(category))
+        );
+    });
+    test("check clicking on category shows topic ", () => {
+        const { getByText } = render(<App />);
+        const categoryButton = getByText("Frontend");
+        fireEvent.click(categoryButton);
+        getByText("Micro frontends");
+        getByText("React");
+    });
 
-	test("check clicking on back button goes back to category view", () => {
-		const { getByText, getByTestId } = render(<App />);
-		const categoryButton = getByText("Frontend");
-		fireEvent.click(categoryButton);
-		const backButton = getByTestId("back-button");
-		fireEvent.click(backButton);
-		getByText("Category view: select a category to see more");
-	});
+    test("check clicking on back button goes back to category view", () => {
+        const { getByText, getByTestId } = render(<App />);
+        const categoryButton = getByText("Frontend");
+        fireEvent.click(categoryButton);
+        const backButton = getByTestId("back-button");
+        fireEvent.click(backButton);
+        getByText("Category view: select a category to see more");
+    });
 
-	test("form works as expected", () => {
-		const { getByText, getByLabelText } = render(<App />);
+    test("form works as expected", () => {
+        const { getByText, getByLabelText } = render(<App />);
 
-		const searchbar = getByLabelText("Search for a topic:");
-		const submitButton = getByText("Search Topics");
+        const searchbar = getByLabelText("Search for a topic:");
+        const submitButton = getByText("Search Topics");
 
-		fireEvent.change(searchbar, {
-			target: { value: "React" }
-		});
+        fireEvent.change(searchbar, {
+            target: { value: "React" }
+        });
 
-		fireEvent.click(submitButton);
-		getByText("Martha Lambert");
-	});
+        fireEvent.click(submitButton);
+        getByText("Martha Lambert");
+    });
 
-	test("Searchbar works as expected", () => {
-		const { getByText, getByLabelText } = render(<App />);
-		const peopleTextInput = getByLabelText("Search for a person:");
-		const searchPeopleSubmit = getByText("Search");
-		fireEvent.change(peopleTextInput, {
-			target: { value: "Lyndsey Scott" }
-		});
-		fireEvent.click(searchPeopleSubmit);
-		getByText("Lyndsey Scott");
-	});
+    test("Searchbar works as expected", () => {
+        const { getByText, getByLabelText } = render(<App />);
+        const peopleTextInput = getByLabelText("Search for a person:");
+        const searchPeopleSubmit = getByText("Search");
+        fireEvent.change(peopleTextInput, {
+            target: { value: "Lyndsey Scott" }
+        });
+        fireEvent.click(searchPeopleSubmit);
+        getByText("Lyndsey Scott");
+    });
 
-	// test("clicking on topic goes to person view", () => {
-	// 	const { getByText, getByTestId } = render(
-	// 		<MainContent
-	// 			topic={topic}
-	// 			setTopic={setTopic}
-	// 			categoriesList={categoriesList}
-	// 		/>
-	// 	);
-	// 	const categoryButton = getByText("Frontend");
-	// 	fireEvent.click(categoryButton);
-	// 	const topicButton = getByText("Micro frontends");
-	// 	fireEvent.click(topicButton);
-	// 	getByText("Martha Lambert");
-	// });
+    // test("clicking on topic goes to person view", () => {
+    // 	const { getByText, getByTestId } = render(
+    // 		<MainContent
+    // 			topic={topic}
+    // 			setTopic={setTopic}
+    // 			categoriesList={categoriesList}
+    // 		/>
+    // 	);
+    // 	const categoryButton = getByText("Frontend");
+    // 	fireEvent.click(categoryButton);
+    // 	const topicButton = getByText("Micro frontends");
+    // 	fireEvent.click(topicButton);
+    // 	getByText("Martha Lambert");
+    // });
 
-	// categoriesList.forEach((category) =>
-	// 	getByText(capitalizeFirstLetter(category))
-	// );
+    // categoriesList.forEach((category) =>
+    // 	getByText(capitalizeFirstLetter(category))
+    // );
 });
