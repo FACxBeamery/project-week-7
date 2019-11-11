@@ -58,6 +58,7 @@ const App = () => {
 
     return (
         <>
+
             <Header
                 person={person}
                 setPerson={setPerson}
@@ -67,40 +68,40 @@ const App = () => {
             ></Header>
 
             {topicData &&
-            typeof topicData.then !== "function" &&
-            (peopleData && typeof peopleData.then !== "function") ? (
-                <div className={styles["main"]}>
-                    <Form
-                        view={view}
-                        setView={setView}
-                        topic={topic}
-                        setTopic={setTopic}
-                        location={location}
-                        setLocation={setLocation}
-                        peopleData={peopleData}
-                        setPeopleData={setPeopleData}
-                        category={category}
-                        setCategory={setCategory}
-                        topicData={topicData}
-                        setTopicData={setTopicData}
-                    ></Form>
+                typeof topicData.then !== "function" &&
+                (peopleData && typeof peopleData.then !== "function") ? (
+                    <div className={styles["main"]}>
+                        <Form
+                            view={view}
+                            setView={setView}
+                            topic={topic}
+                            setTopic={setTopic}
+                            location={location}
+                            setLocation={setLocation}
+                            peopleData={peopleData}
+                            setPeopleData={setPeopleData}
+                            category={category}
+                            setCategory={setCategory}
+                            topicData={topicData}
+                            setTopicData={setTopicData}
+                        ></Form>
 
-                    <MainContent
-                        view={view}
-                        setView={setView}
-                        topic={topic}
-                        setTopic={setTopic}
-                        location={location}
-                        categoriesList={categoriesList}
-                        locationsList={locationsList}
-                        peopleData={peopleData}
-                        category={category}
-                        setCategory={setCategory}
-                        topicData={topicData}
-                        setNewItemAdded={setNewItemAdded}
-                    ></MainContent>
-                </div>
-            ) : null}
+                        <MainContent
+                            view={view}
+                            setView={setView}
+                            topic={topic}
+                            setTopic={setTopic}
+                            location={location}
+                            categoriesList={categoriesList}
+                            locationsList={locationsList}
+                            peopleData={peopleData}
+                            category={category}
+                            setCategory={setCategory}
+                            topicData={topicData}
+                            setNewItemAdded={setNewItemAdded}
+                        ></MainContent>
+                    </div>
+                ) : null}
         </>
     );
 };
