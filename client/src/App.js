@@ -38,12 +38,16 @@ const App = () => {
 
     React.useEffect(() => {
         const setData = () => {
+
             getTopicData().then((data) => {
                 setTopicData(data);
                 setCategoriesList(getCategories(data));
+
             });
         };
+
         setData();
+
     }, []);
 
     React.useEffect(() => {
